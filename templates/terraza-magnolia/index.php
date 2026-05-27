@@ -10,6 +10,7 @@ $sections = [
     /* ═══ HEADER — sticky con blur ═══ */
     ['type' => 'header', 'variant' => 'Header2', 'data' => [
         'brand' => 'Magnolia', 'icon' => 'bi-flower1',
+        'dark' => true,
         'show_wa' => true, 'wa_link' => wa_link('Hola, quiero información de Terraza Magnolia.'),
         'links' => [
             ['href' => '#inicio', 'label' => 'Inicio'], ['href' => '#nosotros', 'label' => 'El espacio'],

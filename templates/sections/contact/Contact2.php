@@ -1,4 +1,4 @@
-<?php /* === CONTACT FORM TWO COLUMNS === */ ?>
+<?php /* === CONTACT FORM TWO COLUMNS WITH SOCIAL === */ ?>
 <?php $d = section_defaults($data); ?>
 <section id="<?= esc($d['id'] ?: 'contacto') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
   <div class="container">
@@ -42,28 +42,32 @@
       </div>
       <div class="col-lg-5">
         <div class="rounded-4 p-4 h-100" style="background:var(--section-surface); border:1px solid var(--section-border)">
-          <h4 class="fw-bold mb-3" style="font-family:var(--tb-heading-font)"><?= esc($data['info_title'] ?? 'Información de contacto') ?></h4>
-          <?php if (!empty($data['info_items'])): ?>
-            <?php foreach ($data['info_items'] as $item): ?>
-              <div class="d-flex gap-3 mb-3 pb-3 border-bottom" style="border-color:var(--section-border) !important">
-                <div class="flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center" style="width:44px; height:44px; background:rgba(var(--tb-primary-rgb), .12); color:var(--tb-primary)">
-                  <i class="bi <?= esc($item['icon'] ?? 'bi-geo-alt') ?> fs-5"></i>
-                </div>
-                <div>
-                  <p class="fw-semibold mb-0 small"><?= esc($item['label'] ?? '') ?></p>
-                  <p class="mb-0 small" style="color:var(--section-muted)"><?= esc($item['text'] ?? '') ?></p>
-                </div>
+          <?php if (!empty($data['info_title'])): ?>
+            <h4 class="fw-bold mb-4" style="font-family:var(--tb-heading-font)"><?= esc($data['info_title']) ?></h4>
+          <?php endif; ?>
+
+          <?php if (!empty($data['social'])): ?>
+            <div class="<?= !empty($data['info_title']) ? 'pt-3 border-top' : '' ?>" style="<?= !empty($data['info_title']) ? 'border-color:var(--section-border) !important' : '' ?>">
+              <p class="fw-bold mb-3" style="color:var(--tb-primary)">Síguenos en redes</p>
+              <div class="d-flex flex-wrap gap-2">
+                <?php foreach ($data['social'] as $s): ?>
+                  <a href="<?= esc($s['href'] ?? '#') ?>" target="_blank" rel="noopener"
+                     class="tb-btn tb-btn--outline d-flex align-items-center gap-2"
+                     style="border-radius:50px; padding:0.6rem 1.2rem; font-size:0.82rem">
+                    <i class="bi <?= esc($s['icon']) ?>"></i>
+                    <?= esc($s['label'] ?? '') ?>
+                  </a>
+                <?php endforeach; ?>
               </div>
-            <?php endforeach; ?>
+            </div>
           <?php endif; ?>
-          <?php if (!empty($data['info_image'])): ?>
-            <img src="<?= esc($data['info_image']) ?>" alt="<?= esc($data['info_image_alt'] ?? 'Ubicación') ?>"
-                 class="img-fluid rounded-3 mt-2 w-100" style="max-height:200px; object-fit:cover" loading="lazy">
-          <?php endif; ?>
-          <?php if (!empty($data['info_cta'])): ?>
-            <a class="tb-btn tb-btn--whatsapp w-100 mt-3" href="<?= esc($data['info_cta']['href'] ?? '#') ?>" <?= !empty($data['info_cta']['target']) ? 'target="_blank" rel="noopener"' : '' ?>>
-              <i class="bi bi-whatsapp"></i> <?= esc($data['info_cta']['label'] ?? 'WhatsApp') ?>
-            </a>
+
+          <?php if (!empty($data['hashtag'])): ?>
+            <div class="mt-4 text-center">
+              <span class="rounded-pill px-4 py-2 d-inline-block" style="background:rgba(var(--tb-primary-rgb),0.1); color:var(--tb-primary); font-size:0.9rem; font-weight:600">
+                <i class="bi bi-hash me-1"></i><?= esc($data['hashtag']) ?>
+              </span>
+            </div>
           <?php endif; ?>
         </div>
       </div>

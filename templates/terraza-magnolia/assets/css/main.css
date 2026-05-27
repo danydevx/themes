@@ -685,7 +685,21 @@ body.theme-magnolia .tb-section__header--left .tb-section__title::after {
   border-color: rgba(0, 0, 0, 0.15) !important;
 }
 .tb-header--transparent.scrolled .navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.tb-header--dark {
+  background: rgba(26, 18, 21, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(212, 168, 151, 0.15);
+}
+.tb-header--dark .tb-header__logo { color: #f5f0ea; }
+.tb-header--dark .tb-header__logo:hover { color: #d4a897; }
+.tb-header--dark .tb-header__logo i { color: #d4a897; }
+.tb-header--dark .nav-link { color: rgba(245, 240, 234, 0.85); }
+.tb-header--dark .nav-link:hover { color: #d4a897; }
+.tb-header--dark .navbar-toggler { border-color: rgba(245, 240, 234, 0.3) !important; }
+.tb-header--dark .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30%3e%3cpath stroke='rgba(245, 240, 234, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 /* ═══════════════════════════════════════
    Section LESS — Hero8

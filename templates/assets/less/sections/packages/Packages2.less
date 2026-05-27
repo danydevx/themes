@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════
+   Section LESS — Packages2
+   Step cards with visual hierarchy
+   ═══════════════════════════════════════ */
+
+.tb-packages--2 {
+  &__steps {
+    gap: 0.75rem;
+  }
+
+  &__step {
+    cursor: pointer;
+    transition: all var(--tb-transition);
+
+    &:hover {
+      border-color: var(--tb-primary) !important;
+      color: var(--tb-primary);
+    }
+
+    span:first-child {
+      transition: all var(--tb-transition);
+    }
+  }
+
+  &__card {
+    position: relative;
+    transition: all var(--tb-transition);
+    animation: fadeInUp 0.4s ease;
+
+    &[style*="display: flex"] {
+      display: flex !important;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

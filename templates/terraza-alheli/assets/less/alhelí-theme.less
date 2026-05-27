@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════
+   Theme: Alhelí — Romántico social
+   Rosa empolvado + lavanda + blanco cálido
+   ═══════════════════════════════════════ */
+
+body.theme-alheli {
+  h1, .tb-hero__title { font-size: clamp(2.2rem, 4.5vw, 3.5rem) !important; font-weight: 600; }
+  h2, .tb-section__title { font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important; font-weight: 600; }
+  h3, .tb-card__title { font-size: 1.15rem; }
+
+  .tb-section {
+    padding: 5rem 0 !important;
+    &__header { margin-bottom: 3rem !important; }
+    &__label {
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--tb-primary);
+    }
+  }
+
+  .tb-btn {
+    border-radius: 4px !important;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.8rem 2rem;
+    &--lg { padding: 1rem 2.5rem; font-size: 0.9rem; }
+    &--primary { background: var(--tb-primary); color: #fff; border-color: var(--tb-primary); }
+    &--whatsapp { background: #25d366; border-color: #25d366; color: #fff; }
+    &--outline {
+      background: transparent;
+      color: var(--section-text);
+      border-color: var(--section-border);
+      &:hover { background: var(--tb-primary); border-color: var(--tb-primary); color: #fff; }
+    }
+  }
+
+  .tb-card {
+    border-radius: 8px !important;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: all 0.35s ease;
+    &:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  }
+
+  .tb-gallery__item { border-radius: 8px; overflow: hidden; }
+  .tb-gallery__overlay { border-radius: 0 0 8px 8px; }
+  .tb-form { border-radius: 8px !important; }
+  .tb-form .form-control, .tb-form .form-select { border-radius: 6px !important; }
+  .tb-avatar { border-radius: 50% !important; border: 2px solid var(--tb-primary); }
+
+  .tb-testimonials--7__card { border-radius: 8px !important; }
+
+  .tb-event-types--5__card { border-radius: 8px !important; }
+  .tb-event-types--5__card:hover { border-color: var(--tb-primary); }
+
+  .accordion-item { border-radius: 8px !important; border: 1px solid var(--section-border); overflow: hidden; }
+  .accordion-button { border-radius: 0 !important; }
+  .accordion-button:not(.collapsed) { background: var(--section-surface); }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-alheli {
+    .tb-section { padding: 3.5rem 0 !important; }
+    h1 { font-size: 2rem !important; }
+  }
+}

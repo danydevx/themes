@@ -1,0 +1,19 @@
+/* ═══════════════════════════════════════
+   Section LESS — Services4
+   Horizontal cards with left border accent
+   ═══════════════════════════════════════ */
+
+.tb-services--4 {
+  &__card {
+    transition: all var(--tb-transition);
+    &:hover {
+      border-left-color: var(--tb-primary) !important;
+      transform: translateX(4px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+
+  &__num {
+    box-shadow: 0 2px 8px rgba(var(--tb-primary-rgb), 0.3);
+  }
+}

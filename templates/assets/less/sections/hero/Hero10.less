@@ -1,0 +1,73 @@
+/* ═══════════════════════════════════════
+   Section LESS — Hero10
+   Horizontal split with pool image
+   ═══════════════════════════════════════ */
+
+.tb-hero--10 {
+  padding: 0;
+
+  &__img {
+    transition: transform 0.6s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+  }
+
+  &__badge {
+    &-text {
+      background: var(--tb-primary);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__overline {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--tb-primary);
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    max-width: 480px;
+  }
+
+  &__text {
+    font-size: 1.05rem;
+    color: var(--section-muted);
+    line-height: 1.7;
+  }
+
+  &__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+
+  &__feature {
+    .small { color: var(--section-text); }
+  }
+
+  &__caption {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    width: 100%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tb-hero--10 {
+    &__content { padding: 2rem 0; }
+  }
+}

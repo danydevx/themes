@@ -1,40 +1,81 @@
 /* ═══════════════════════════════════════
    Section LESS — Services3
-   Grid numerado con títulos y descripciones
+   Large centered number circles with card layout
    ═══════════════════════════════════════ */
 
-.tb-services {
-  &__number {
+.tb-services--3 {
+  .tb-services--3__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tb-services--3__item {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    padding: 2rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all var(--tb-transition);
+
+    &:hover {
+      border-color: var(--tb-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+
+  .tb-services--3__number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
-    background: var(--button-bg, var(--tb-primary));
-    color: var(--button-text, #fff);
+    background: var(--tb-primary);
+    color: #fff;
     font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(var(--tb-primary-rgb), 0.3);
   }
-  &__item {
-    background: var(--section-surface);
-    border: 1px solid var(--section-border);
-    padding: 1.5rem;
-    height: 100%;
-    transition: border-color var(--tb-transition);
-    &:hover { border-color: var(--section-text); }
-  }
-  &__title {
+
+  .tb-services--3__title {
+    font-family: var(--tb-heading-font);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 0.5rem;
+    color: var(--heading-color);
   }
-  &__desc {
-    font-size: 0.9rem;
+
+  .tb-services--3__desc {
+    font-size: 0.88rem;
     color: var(--section-muted);
     line-height: 1.6;
     margin: 0;
+    flex-grow: 1;
+  }
+}
+
+.scheme-dark,
+.scheme-color {
+  .tb-services--3__item {
+    background: var(--section-surface);
+    border-color: var(--section-border);
+  }
+
+  .tb-services--3__title {
+    color: var(--heading-color);
+  }
+}
+
+.scheme-soft {
+  .tb-services--3__item {
+    background: var(--tb-bg);
   }
 }

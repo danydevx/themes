@@ -1,0 +1,40 @@
+/* ═══════════════════════════════════════
+   Section LESS — Gallery7
+   Staggered masonry grid
+   ═══════════════════════════════════════ */
+
+.tb-gallery--7 {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    img { transition: transform 0.4s ease; }
+    &:hover img { transform: scale(1.05); }
+
+    &--tall { grid-row: span 2; }
+  }
+
+  &__overlay {
+    background: linear-gradient(transparent 50%, rgba(0,0,0,0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__item:hover &__overlay { opacity: 1; }
+}
+
+@media (max-width: 991.98px) {
+  .tb-gallery--7__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 767.98px) {
+  .tb-gallery--7__grid { grid-template-columns: repeat(2, 1fr); }
+  .tb-gallery--7__item--tall { grid-row: span 1; }
+}

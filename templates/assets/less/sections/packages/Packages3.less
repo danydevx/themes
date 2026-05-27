@@ -1,0 +1,22 @@
+/* ═══════════════════════════════════════
+   Section LESS — Packages3
+   Horizontal price cards
+   ═══════════════════════════════════════ */
+
+.tb-packages--3 {
+  &__card {
+    transition: all var(--tb-transition);
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--tb-shadow-lg);
+    }
+  }
+
+  &__highlight-bar {
+    background: var(--tb-primary);
+  }
+
+  &__meta {
+    font-size: 0.85rem;
+  }
+}

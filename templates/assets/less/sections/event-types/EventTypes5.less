@@ -1,0 +1,19 @@
+/* ═══════════════════════════════════════
+   Section LESS — EventTypes5
+   Icon background cards
+   ═══════════════════════════════════════ */
+
+.tb-event-types--5 {
+  &__card {
+    transition: all var(--tb-transition);
+    &:hover {
+      border-color: var(--tb-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+
+  &__icon-wrapper {
+    flex-shrink: 0;
+  }
+}

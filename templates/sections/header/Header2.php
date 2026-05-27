@@ -1,5 +1,6 @@
 <?php /* === HEADER STICKY TRANSPARENTE === */ ?>
-<header class="tb-header tb-header--transparent">
+<?php $dark = !empty($data['dark']); ?>
+<header class="tb-header <?= $dark ? 'tb-header--dark' : 'tb-header--transparent' ?>">
   <div class="container">
     <nav class="navbar navbar-expand-lg p-0">
       <a class="tb-header__logo navbar-brand" href="#">

@@ -176,6 +176,151 @@ AOS.init({ duration: 700, once: true });
 
 ---
 
+## Temas oscuros (dark theme)
+
+Para crear un template con variante oscura, sigue estas reglas:
+
+### 1. Body class
+
+Usa una clase `theme-{nombre}-dark` en el body:
+
+```php
+<body class="theme-alheli-dark">
+```
+
+### 2. Variables CSS del tema oscuro
+
+Crea un archivo de variables del tema oscuro (ej. `alhelí-dark-vars.less`):
+
+```less
+:root {
+  --tb-primary: #d4a897;
+  --tb-primary-rgb: 212, 168, 151;
+  --tb-secondary: #3d2a2e;
+  --tb-secondary-rgb: 61, 42, 46;
+  --tb-accent: #e8c4b8;
+  --tb-accent-rgb: 232, 196, 184;
+  --tb-bg: #1a1215;        // fondo principal oscuro
+  --tb-surface: #2a1f22;   // superficie elevated
+  --tb-text: #f5f0ea;      // texto principal claro
+  --tb-muted: #b8a8a0;     // texto secundario
+  --tb-border: rgba(212, 168, 151, 0.18);
+}
+```
+
+### 3. CSS del tema oscuro
+
+El `main.css` compilado del tema oscuro debe incluir **overrides de scheme al INICIO** del archivo, antes de cualquier otra definición. Esto es crítico porque `scheme.less` define colores hardcodeados en las clases `.scheme-dark`, `.scheme-color`, etc.
+
+```css
+/* ═══ OVERRIDES DE SCHEME — al inicio ═══ */
+.scheme-dark {
+  --section-bg: #1a1215;
+  --section-surface: #2a1f22;
+  --section-text: #f5f0ea;
+  --section-muted: #b8a8a0;
+  --section-border: rgba(212, 168, 151, 0.18);
+  --heading-color: #f5f0ea;
+  --accent-color: #e8c4b8;
+  --button-bg: #d4a897;
+  --button-text: #1a1215;
+  --icon-color: #d4a897;
+  color: #f5f0ea;
+}
+.scheme-color {
+  --section-bg: #d4a897;
+  --section-surface: #3d2a2e;
+  --section-text: #1a1215;
+  --section-muted: rgba(26, 18, 21, 0.72);
+  --section-border: rgba(26, 18, 21, 0.22);
+  --heading-color: #1a1215;
+  --accent-color: #3d2a2e;
+  --button-bg: #3d2a2e;
+  --button-text: #f5f0ea;
+  --icon-color: #1a1215;
+  color: #1a1215;
+}
+.scheme-neutral { --section-bg: #1a1215; --section-surface: #2a1f22; --section-text: #f5f0ea; --section-muted: #b8a8a0; --section-border: rgba(212, 168, 151, 0.18); --heading-color: #f5f0ea; --accent-color: #e8c4b8; --button-bg: #d4a897; --button-text: #1a1215; --icon-color: #d4a897; }
+.scheme-light { --section-bg: #1a1215; --section-surface: #2a1f22; --section-text: #f5f0ea; --section-muted: #b8a8a0; --section-border: rgba(212, 168, 151, 0.18); --heading-color: #f5f0ea; --accent-color: #e8c4b8; --button-bg: #d4a897; --button-text: #1a1215; --icon-color: #d4a897; }
+.scheme-soft { --section-bg: #2a1f22; --section-surface: #1a1215; --section-text: #f5f0ea; --section-muted: #b8a8a0; --section-border: rgba(212, 168, 151, 0.18); --heading-color: #f5f0ea; --accent-color: #e8c4b8; --button-bg: #d4a897; --button-text: #1a1215; --icon-color: #d4a897; }
+
+/* Luego :root con las variables del tema oscuro */
+:root {
+  --tb-primary: #d4a897;
+  --tb-primary-rgb: 212, 168, 151;
+  --tb-secondary: #3d2a2e;
+  ...
+}
+```
+
+### 4. Header con soporte dark
+
+Header2 soporta un parámetro `dark` que cambia su clase CSS:
+
+```php
+['type' => 'header', 'variant' => 'Header2', 'data' => [
+    'brand' => 'Terraza Alhelí',
+    'icon' => 'bi-flower1',
+    'dark' => true,  // usa .tb-header--dark
+    'show_wa' => true,
+    'wa_link' => wa_link('...'),
+    'links' => [...],
+]],
+```
+
+El PHP usa:
+```php
+$dark = !empty($data['dark']);
+<header class="tb-header <?= $dark ? 'tb-header--dark' : 'tb-header--transparent' ?>">
+```
+
+El LESS define `.tb-header--dark` con colores para tema oscuro (fondo `#1a1215` con 97% opacidad, texto crema `#f5f0ea`, hover rosa `#d4a897`).
+
+### 5. Footer con soporte dark
+
+Footer6 soporta un parámetro `dark`:
+
+```php
+['type' => 'footer', 'variant' => 'Footer6', 'data' => [
+    'logo' => 'Terraza Alhelí',
+    'dark' => true,  // cambia estilos inline
+    'desc' => '...',
+    'social' => [...],
+]],
+```
+
+El PHP cambia los estilos inline de:
+- `background`: `var(--tb-bg)` en vez de `var(--tb-text)`
+- `color`: `var(--tb-muted)` en vez de `rgba(255,255,255,0.7)`
+- Borders y iconos se ajustan con opacity reducida
+
+### 6. LESS del tema
+
+El `main.less` de un tema oscuro debe importar las variables del tema oscuro **ANTES** de `scheme.less`:
+
+```less
+/* 1. Variables del tema oscuro PRIMERO */
+@import "alhelí-dark-vars.less";
+
+/* 2. Base global — scheme.less consume las vars redefinidas */
+@import "../../../assets/less/scheme.less";
+
+/* 3. Tema específico */
+@import "alhelí-dark-theme.less";
+```
+
+El archivo de tema (`.less`) debe incluir overrides de `.scheme-dark` y `.scheme-color` para que las secciones con `scheme-dark` usen las variables CSS correctas.
+
+### 7. Validación de contraste para dark
+
+Verificar especialmente en tema oscuro:
+- Texto `#f5f0ea` sobre fondo `#1a1215` (ratio ~14:1) ✓
+- Texto `#b8a8a0` sobre fondo `#1a1215` (ratio ~7:1) ✓
+- Botón primary `#d4a897` con texto `#1a1215` (ratio ~7:1) ✓
+- Links en footer `rgba(245,240,234,0.7)` sobre `#1a1215` (ratio ~5:1) ✓ mínimo
+
+---
+
 ## Contenido
 
 - Español mexicano formal, hablando de "usted"

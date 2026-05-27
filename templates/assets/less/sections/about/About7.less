@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════
+   Section LESS — About7
+   Horizontal stats pool layout
+   ═══════════════════════════════════════ */
+
+.tb-about--7 {
+  &__stats-row {
+    border-bottom: 1px solid var(--section-border);
+  }
+
+  &__stat {
+    min-width: 120px;
+  }
+
+  &__img {
+    border-radius: var(--tb-radius-lg);
+    box-shadow: var(--tb-shadow-md);
+  }
+
+  &__feature-card {
+    transition: all var(--tb-transition);
+    &:hover {
+      border-color: var(--tb-primary) !important;
+      transform: translateY(-3px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+}

@@ -1,40 +1,38 @@
 /* ═══════════════════════════════════════
-   Section LESS — Contact Form
-   Variantes: Contact1-3
+   Section LESS — Contact3
+   Centered minimal form
    ═══════════════════════════════════════ */
 
-.tb-form {
-  background: var(--section-surface);
-  border: 1px solid var(--section-border);
-  padding: 2.5rem;
-
-  .form-label {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--section-text);
+.tb-contact--3 {
+  .tb-form {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
   }
 
   .form-control,
   .form-select {
-    padding: 0.8rem 1rem;
-    border-radius: var(--tb-radius-sm);
-    border-color: var(--section-border);
-    background: var(--section-bg);
-    color: var(--section-text);
-    font-family: var(--tb-body-font);
+    border: 1.5px solid var(--section-border);
+    border-radius: var(--tb-radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    background: var(--tb-bg);
+    color: var(--tb-text);
+    transition: border-color var(--tb-transition);
+
     &:focus {
       border-color: var(--tb-primary);
-      box-shadow: 0 0 0 0.15rem rgba(var(--tb-primary-rgb), 0.15);
+      box-shadow: 0 0 0 3px rgba(var(--tb-primary-rgb), 0.1);
+      outline: none;
     }
+
+    &::placeholder { color: var(--tb-muted); }
   }
 
-  &__control {
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-  }
-
-  &__submit {
-    border-radius: 50px;
-    padding: 1rem;
+  .form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--section-text);
+    margin-bottom: 0.4rem;
   }
 }

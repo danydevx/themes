@@ -1,0 +1,21 @@
+/* ═══════════════════════════════════════
+   Section LESS — EventTypes6
+   Horizontal scroll cards
+   ═══════════════════════════════════════ */
+
+.tb-event-types--6 {
+  &__scroll-wrapper {
+    &::-webkit-scrollbar { height: 6px; }
+    &::-webkit-scrollbar-track { background: var(--section-border); border-radius: 3px; }
+    &::-webkit-scrollbar-thumb { background: var(--tb-primary); border-radius: 3px; }
+  }
+
+  &__card {
+    transition: all var(--tb-transition);
+    &:hover {
+      border-color: var(--tb-primary) !important;
+      transform: translateY(-4px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+}

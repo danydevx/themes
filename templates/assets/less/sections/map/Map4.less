@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════
+   Section LESS — Map4
+   Location card with info cards
+   ═══════════════════════════════════════ */
+
+.tb-map--4 {
+  &__card {
+    transition: all var(--tb-transition);
+
+    &:hover {
+      border-color: var(--tb-primary);
+      transform: translateX(4px);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--tb-primary);
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+}
