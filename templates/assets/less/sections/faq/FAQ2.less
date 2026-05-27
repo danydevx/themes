@@ -3,12 +3,34 @@
    Accordion dos columnas
    ═══════════════════════════════════════ */
 
-/* FAQ2 reuses bootstrap accordion styles from scheme.less */
-/* Answer left-border visual indicator */
-.tb-faq-answer {
-  border-left: 2px solid var(--icon-color, var(--tb-primary));
-  padding-left: 1rem;
-  color: var(--section-muted);
-  font-size: 0.92rem;
-  line-height: 1.7;
+.tb-faq--2 {
+  .accordion-item {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-md) !important;
+    overflow: hidden;
+  }
+
+  .accordion-button {
+    background: var(--section-surface);
+    color: var(--section-text);
+    box-shadow: none;
+
+    &:not(.collapsed) {
+      background: var(--section-surface);
+      color: var(--heading-color);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .tb-faq-answer {
+    border-left: 2px solid var(--icon-color);
+    padding-left: 1rem;
+    color: var(--section-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
 }

@@ -11,17 +11,17 @@
     <div class="row g-4">
       <?php foreach ($data['items'] ?? [] as $idx => $t): ?>
         <div class="col-md-6 col-lg-4">
-          <div class="rounded-4 p-4 h-100 position-relative" style="background:var(--section-surface); border:1px solid var(--section-border)">
-            <i class="bi bi-quote position-absolute top-0 end-0 mt-3 me-3" style="font-size:3rem; color:var(--tb-primary); opacity:.15; line-height:1"></i>
-            <p class="mb-3" style="font-style:italic; line-height:1.7; color:var(--section-text); position:relative; z-index:1">"<?= esc($t['text'] ?? '') ?>"</p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top" style="border-color:var(--section-border) !important">
-              <div class="rounded-circle overflow-hidden flex-shrink-0" style="width:48px; height:48px">
+          <div class="tb-testimonials__grid-card rounded-4 p-4 h-100 position-relative">
+            <i class="tb-testimonials__quote-icon bi bi-quote position-absolute top-0 end-0 mt-3 me-3"></i>
+            <p class="tb-testimonials__grid-text mb-3">"<?= esc($t['text'] ?? '') ?>"</p>
+            <div class="tb-testimonials__grid-author d-flex align-items-center gap-3 pt-3 border-top">
+              <div class="tb-testimonials__avatar rounded-circle overflow-hidden flex-shrink-0">
                 <img src="<?= esc($t['avatar'] ?? placeholder('100x100', 'b87c4c', 'fff', substr(($t['author'] ?? 'C'), 0, 1))) ?>"
-                     alt="<?= esc($t['author'] ?? '') ?>" class="w-100 h-100" style="object-fit:cover" loading="lazy">
+                     alt="<?= esc($t['author'] ?? '') ?>" class="w-100 h-100" loading="lazy">
               </div>
               <div>
                 <p class="fw-semibold mb-0 small"><?= esc($t['author'] ?? '') ?></p>
-                <p class="mb-0 small" style="color:var(--section-muted)"><?= esc($t['event'] ?? '') ?></p>
+                <p class="tb-testimonials__event mb-0 small"><?= esc($t['event'] ?? '') ?></p>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@
 
     <?php if (!empty($data['cta_text'])): ?>
       <div class="text-center mt-5">
-        <p class="small mb-3" style="color:var(--section-muted)"><?= esc($data['cta_text']) ?></p>
+        <p class="tb-testimonials__cta small mb-3"><?= esc($data['cta_text']) ?></p>
         <?php if (!empty($data['cta_link'])): ?>
           <a class="tb-btn tb-btn--outline" href="<?= esc($data['cta_link']) ?>" target="_blank" rel="noopener">
             <i class="bi bi-chat-quote"></i> <?= esc($data['cta_label'] ?? 'Ver más reseñas') ?>

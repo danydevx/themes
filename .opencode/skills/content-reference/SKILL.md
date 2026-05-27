@@ -9,6 +9,13 @@ Este archivo contiene referencias reales de venues en México para usar como ins
 
 **Regla: NO copiar textualmente. Usar como inspiración para crear contenido ficticio realista.**
 
+**Uso correcto de esta referencia:**
+
+- Sirve para rango de precios, tipos de servicios y estructura comercial.
+- No sirve para copiar tono, frases exactas ni terminología mixta.
+- El copy final debe estar en español mexicano formal, trato de "usted".
+- Evitar anglicismos en salida final (`lounge`, `DJ booth`, `half-day`, `full-time`, `playlist`, etc.).
+
 ---
 
 ## Perfil típico de cliente

@@ -1,5 +1,7 @@
 <?php /* === HERO === */ ?>
-<section id="<?= esc($data['id'] ?? 'inicio') ?>" class="tb-hero py-5" <?= anim_attrs($data) ?> style="background-image: url('<?= esc($data['bg'] ?? placeholder('1920x1080', '2c2416', 'b87c4c', 'Terraza+Balcones')) ?>'); ">
+<?php $d = section_defaults($data); ?>
+<?php if (empty($d['bg']) && !empty($data['bg'])) { $d['bg'] = $data['bg']; } ?>
+<section id="<?= esc($d['id'] ?: 'inicio') ?>" class="tb-hero py-5 <?= esc($d['scheme']) ?>" <?= anim_attrs($d) ?><?= bg_style($d) ?>>
   <div class="container">
     <h1 class="tb-hero__title display-2 fw-bold"><?= $data['title'] ?? 'Su celebración merece<br>un lugar especial' ?></h1>
     <p class="tb-hero__text"><?= esc($data['text'] ?? 'Reserve una terraza privada, elegante y lista para recibir a sus invitados en el corazón de Zapopan.') ?></p>

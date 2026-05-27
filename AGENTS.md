@@ -218,7 +218,26 @@ No usar textos vacíos.
 No usar inglés.
 No inventar datos reales engañosos.
 
+Evitar anglicismos de UI/comercial en el copy final. Reemplazar, por ejemplo:
+
+- `lounge` → área social
+- `DJ booth` → cabina de DJ
+- `half-day` / `full-time` → medio turno / tiempo completo
+- `valet parking` → servicio de valet parking
+- `playlist` → lista de reproducción
+
 Los negocios pueden ser ficticios.
+
+---
+
+## Regla crítica de implementación
+
+Para mantener coherencia entre templates:
+
+- Evitar estilos inline en secciones (`style="..."`).
+- Pasar estilos a LESS con clases `tb-` y scope por sección/variante.
+- Validar contraste visual en `scheme-light`, `scheme-soft`, `scheme-dark` y `scheme-color`.
+- Evitar reglas globales que afecten otras variantes (scope local, por ejemplo `.tb-faq--3`, `.tb-amenities`).
 
 ---
 

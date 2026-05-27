@@ -1,6 +1,6 @@
 <?php /* === PRICING TABLE === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'precios') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?><?= bg_style($d) ?>">
+<section id="<?= esc($d['id'] ?: 'precios') ?>" class="tb-section tb-pricing <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?><?= bg_style($d) ?>">
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>
@@ -11,19 +11,17 @@
     <div class="row g-4">
       <?php foreach ($data['plans'] ?? [] as $plan): ?>
         <div class="<?= esc($plan['col'] ?? 'col-md-6 col-lg-4') ?>">
-          <div class="rounded-4 p-4 p-lg-5 h-100 position-relative overflow-hidden"
-               style="background:var(--section-surface); border:2px solid var(--section-border); <?= !empty($plan['highlight']) ? 'border-color:var(--tb-primary) !important; box-shadow:0 8px 40px rgba(var(--tb-primary-rgb), 0.15);' : '' ?>">
+          <div class="tb-pricing__card rounded-4 p-4 p-lg-5 h-100 position-relative overflow-hidden <?= !empty($plan['highlight']) ? 'tb-pricing__card--highlight' : '' ?>">
             <?php if (!empty($plan['highlight'])): ?>
-              <span class="position-absolute top-0 end-0 px-3 py-1 small fw-bold text-white"
-                    style="background:var(--tb-primary); border-radius:0 0 0 var(--tb-radius-sm)"><?= esc($plan['highlight']) ?></span>
+              <span class="tb-pricing__badge position-absolute top-0 end-0 px-3 py-1 small fw-bold text-white"><?= esc($plan['highlight']) ?></span>
             <?php endif; ?>
-            <h3 class="fs-5" style="font-family:var(--tb-heading-font); margin-bottom:.25rem"><?= esc($plan['name'] ?? '') ?></h3>
+            <h3 class="tb-pricing__title fs-5"><?= esc($plan['name'] ?? '') ?></h3>
             <?php if (!empty($plan['desc'])): ?>
-              <p class="small" style="color:var(--section-muted)"><?= esc($plan['desc']) ?></p>
+              <p class="tb-pricing__desc small"><?= esc($plan['desc']) ?></p>
             <?php endif; ?>
-            <div class="display-5 fw-bold my-3" style="color:var(--tb-primary)">
+            <div class="tb-pricing__amount display-5 fw-bold my-3">
               <?= esc($plan['price'] ?? '') ?>
-              <?php if (!empty($plan['unit'])): ?><small class="fs-6 fw-normal" style="color:var(--section-muted)"><?= esc($plan['unit']) ?></small><?php endif; ?>
+              <?php if (!empty($plan['unit'])): ?><small class="tb-pricing__unit fs-6 fw-normal"><?= esc($plan['unit']) ?></small><?php endif; ?>
             </div>
             <?php if (!empty($plan['features'])): ?>
               <ul class="list-unstyled mb-3 small">
@@ -44,7 +42,7 @@
     </div>
 
     <?php if (!empty($data['note'])): ?>
-      <p class="text-center mt-3 small" style="color:var(--section-muted)"><?= esc($data['note']) ?></p>
+      <p class="tb-pricing__note text-center mt-3 small"><?= esc($data['note']) ?></p>
     <?php endif; ?>
   </div>
 </section>

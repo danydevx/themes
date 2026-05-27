@@ -1,6 +1,6 @@
 <?php /* === FAQ ACCORDION MEJORADO === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'faq') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'faq') ?>" class="tb-section tb-faq tb-faq--1 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>

@@ -6,7 +6,7 @@
       <div class="col-lg-5">
         <span class="tb-section__label"><?= esc($d['label']) ?></span>
         <h2 class="tb-section__title text-start"><?= esc($d['title']) ?></h2>
-        <p class="mb-4" style="color:var(--section-muted)"><?= esc($d['subtitle']) ?></p>
+        <p class="tb-about__subtitle mb-4"><?= esc($d['subtitle']) ?></p>
         <?php if (!empty($data['cta'])): ?>
           <a class="tb-btn tb-btn--primary" href="<?= esc($data['cta']['href'] ?? '#') ?>">
             <i class="bi bi-arrow-right"></i> <?= esc($data['cta']['label'] ?? 'Conocer más') ?>
@@ -17,17 +17,17 @@
         <div class="row g-3">
           <?php foreach ($data['stats'] ?? [] as $stat): ?>
             <div class="col-6 col-md-4">
-              <div class="text-center p-4 rounded-4" style="background:var(--section-surface); border:1px solid var(--section-border)">
-                <div class="display-5 fw-bold" style="color:var(--tb-primary)"><?= esc((string)($stat['number'] ?? '')) ?></div>
-                <div class="text-uppercase small fw-semibold" style="letter-spacing:.05em; color:var(--section-muted)"><?= esc($stat['unit'] ?? '') ?></div>
-                <div class="mt-1 tb-fs-caption" style="color:var(--section-muted)"><?= esc($stat['label'] ?? '') ?></div>
+              <div class="tb-about__stat text-center p-4 rounded-4">
+                <div class="tb-about__stat-number display-5 fw-bold"><?= esc((string)($stat['number'] ?? '')) ?></div>
+                <div class="tb-about__stat-unit text-uppercase small fw-semibold"><?= esc($stat['unit'] ?? '') ?></div>
+                <div class="tb-about__stat-caption mt-1 tb-fs-caption"><?= esc($stat['label'] ?? '') ?></div>
               </div>
             </div>
           <?php endforeach; ?>
         </div>
         <?php if (!empty($data['img'])): ?>
           <div class="mt-4">
-            <img class="tb-about__img w-100" src="<?= esc($data['img']) ?>" alt="<?= esc($data['img_alt'] ?? '') ?>" style="max-height:200px;object-fit:cover;">
+            <img class="tb-about__img tb-about__img--compact w-100" src="<?= esc($data['img']) ?>" alt="<?= esc($data['img_alt'] ?? '') ?>">
           </div>
         <?php endif; ?>
       </div>

@@ -4,6 +4,10 @@
    ═══════════════════════════════════════ */
 
 .tb-amenities {
+  .tb-section__subtitle {
+    max-width: 760px;
+  }
+
   &__category {
     margin-bottom: 2.5rem;
     &:last-child { margin-bottom: 0; }
@@ -13,15 +17,21 @@
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 1.25rem;
-
-      h4 {
-        font-family: var(--tb-heading-font);
-        font-weight: 700;
-        font-size: 1.05rem;
-        margin: 0;
-        color: var(--heading-color, var(--tb-text));
-      }
+      font-family: var(--tb-heading-font);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin: 0;
+      color: var(--heading-color, var(--tb-text));
     }
+  }
+
+  &__category-icon {
+    color: var(--icon-color);
+    font-size: 1.05rem;
+  }
+
+  &__category-title {
+    color: var(--heading-color, var(--tb-text));
   }
 
   &__items {
@@ -33,24 +43,53 @@
   &__pill {
     background: var(--section-surface);
     border: 1px solid var(--section-border);
-    border-radius: 50px;
+    border-radius: var(--tb-radius-md);
     transition: all var(--tb-transition);
-
-    i {
-      color: var(--icon-color, var(--tb-primary));
-      font-size: 0.95rem;
-    }
-
-    span {
-      color: var(--section-text);
-      font-size: 0.82rem;
-      font-weight: 500;
-      line-height: 1.4;
-    }
+    min-height: 54px;
 
     &:hover {
       border-color: var(--tb-primary);
       background: rgba(var(--tb-primary-rgb), 0.06);
     }
+  }
+
+  &__check {
+    width: 1.2rem;
+    min-width: 1.2rem;
+    margin-top: 0.08rem;
+    color: var(--icon-color, var(--tb-primary));
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 1rem;
+      line-height: 1;
+    }
+  }
+
+  &__label {
+    color: var(--section-text);
+    font-size: 0.84rem;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+}
+
+.tb-amenities.scheme-dark,
+.tb-amenities.scheme-color {
+  .tb-section__subtitle,
+  .tb-amenities__label {
+    color: var(--section-text);
+    opacity: 0.92;
+  }
+
+  .tb-amenities__pill {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .tb-amenities__check {
+    color: var(--icon-color);
   }
 }

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     offset: 80
   });
 
-  /* ── Header scroll shadow (Header2) ── */
+  /* ── Header scroll shadow (Header3) ── */
   var header = document.querySelector('.tb-header');
   if (header) {
     window.addEventListener('scroll', function () {

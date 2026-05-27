@@ -40,4 +40,28 @@
       }
     }
   }
+
+  &__card--highlight {
+    border-color: var(--tb-primary) !important;
+    box-shadow: 0 8px 40px rgba(var(--tb-primary-rgb), 0.15);
+  }
+
+  &__badge {
+    background: var(--tb-primary);
+    border-radius: 0 0 0 var(--tb-radius-sm);
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+  }
+
+  &__desc,
+  &__unit,
+  &__note {
+    color: var(--section-muted);
+  }
+
+  &__amount {
+    color: var(--tb-primary);
+  }
 }

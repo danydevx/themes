@@ -15,4 +15,36 @@
     color: var(--section-muted);
     font-style: italic;
   }
+
+  &__line {
+    width: 60px;
+    height: 1px;
+    background: var(--tb-primary);
+  }
+
+  &__label {
+    color: var(--tb-primary);
+    letter-spacing: 0.15em;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  &__text {
+    color: var(--section-muted);
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  &__btn-primary,
+  &__btn-secondary {
+    border-radius: 2px;
+  }
+
+  &__btn-primary {
+    letter-spacing: 0.03em;
+  }
 }

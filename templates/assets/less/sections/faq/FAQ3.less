@@ -3,26 +3,56 @@
    Variantes: FAQ1-3
    ═══════════════════════════════════════ */
 
-.accordion-item {
-  background: var(--section-surface);
-  border: 1px solid var(--section-border);
-  border-radius: var(--tb-radius-sm) !important;
-  overflow: hidden;
-}
+.tb-faq--3 {
+  .accordion-item {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-sm) !important;
+    overflow: hidden;
+  }
 
-.accordion-button {
-  background: var(--section-surface);
-  color: var(--section-text);
-  box-shadow: none;
-  font-weight: 600;
-  font-size: 0.98rem;
-  transition: all 0.25s ease;
-  &:not(.collapsed) { background: var(--section-surface); color: var(--section-text); box-shadow: none; }
-  &:focus { box-shadow: none; border-color: transparent; }
-  &::after { background-size: 1rem; width: 1rem; height: 1rem; }
-}
+  .accordion-button {
+    background: var(--section-surface);
+    color: var(--section-text);
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: all 0.25s ease;
 
-.accordion-body {
-  color: var(--section-muted);
-  line-height: 1.7;
+    &:not(.collapsed) {
+      background: var(--section-surface);
+      color: var(--heading-color);
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+
+    &::after {
+      background-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .tb-faq3__button {
+    background: var(--section-surface);
+    color: var(--section-text);
+  }
+
+  .tb-faq3__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(var(--tb-primary-rgb), 0.12);
+    color: var(--icon-color);
+  }
+
+  .tb-faq3__answer,
+  .tb-faq3__cta,
+  .accordion-body {
+    color: var(--section-muted);
+    line-height: 1.7;
+  }
 }

@@ -198,6 +198,30 @@ AOS.init({ duration: 700, once: true });
 7. Crear `main.js` con inicializaciones necesarias
 8. Validar: sin CSS no usado, sin colores hardcodeados, sin duplicados de schemes
 
+### Reglas de implementación estrictas
+
+- No usar estilos inline (`style="..."`) en secciones.
+- Usar clases `tb-` para cualquier bloque no trivial.
+- Scopear estilos por sección/variante (ej. `.tb-faq--3`, `.tb-amenities`).
+- Mantener consistencia entre markup PHP y clases definidas en LESS.
+
+### Checklist de contraste por schemes (obligatorio)
+
+Antes de terminar, validar visualmente cada sección usada en:
+
+- `scheme-light`
+- `scheme-soft`
+- `scheme-dark`
+- `scheme-color`
+
+Verificar mínimo:
+
+- Texto principal legible sobre fondo de sección.
+- Texto secundario (`--section-muted`) con contraste suficiente.
+- Bordes de cards/inputs visibles.
+- Iconos/checks/indicadores distinguibles.
+- Estados hover/focus visibles en botones, links y accordions.
+
 ---
 
 ## Validación final
@@ -208,3 +232,5 @@ Responder con:
 - Secciones usadas (PHP + LESS)
 - Imports en `main.less`
 - Librerías JS inicializadas
+- Confirmación de contraste validado en `light/soft/dark/color`
+- Confirmación de cero estilos inline en secciones
