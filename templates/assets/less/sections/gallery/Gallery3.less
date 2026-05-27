@@ -1,0 +1,19 @@
+/* ═══════════════════════════════════════
+   Section LESS — Gallery3
+   Collage masonry: grid asimétrico con lightbox
+   ═══════════════════════════════════════ */
+
+.tb-gallery {
+  &__grid-item {
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    &:hover img { transform: scale(1.04); }
+  }
+}

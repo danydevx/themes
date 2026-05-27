@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════
+   Section LESS — EventTypes2
+   Horizontal scroll con snap CSS y cards
+   ═══════════════════════════════════════ */
+
+.tb-event-types {
+  &__scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0.5rem 0.75rem;
+    margin: 0 -0.5rem;
+
+    &::-webkit-scrollbar { height: 4px; }
+    &::-webkit-scrollbar-thumb {
+      background: var(--tb-border);
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--section-bg);
+    }
+  }
+
+  &__scroll-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+}

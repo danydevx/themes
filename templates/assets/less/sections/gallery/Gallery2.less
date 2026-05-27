@@ -1,0 +1,19 @@
+/* ═══════════════════════════════════════
+   Section LESS — Gallery2
+   Grid pseudo-masonry con GLightbox
+   ═══════════════════════════════════════ */
+
+.tb-gallery {
+  &__grid-link {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    &:hover img { transform: scale(1.04); }
+  }
+}

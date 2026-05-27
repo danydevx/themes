@@ -1,0 +1,43 @@
+/* ═══════════════════════════════════════
+   Section LESS — Pricing1
+   Tarjetas de precios simples
+   ═══════════════════════════════════════ */
+
+.tb-pricing {
+  &__card {
+    background: var(--section-surface);
+    border: 2px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--tb-transition);
+    height: 100%;
+
+    &:hover {
+      border-color: var(--tb-primary);
+      box-shadow: var(--tb-shadow-md);
+    }
+
+    h3 {
+      font-family: var(--tb-heading-font);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--heading-color, var(--tb-text));
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 0.88rem;
+        padding: 0.3rem 0;
+        color: var(--section-muted);
+        border-bottom: 1px solid var(--section-border);
+        &:last-child { border-bottom: none; }
+      }
+    }
+  }
+}

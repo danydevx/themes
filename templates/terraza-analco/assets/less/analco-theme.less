@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════
+   Terraza Analco — Theme-specific overrides
+   Premium luxury: dark sections, gold accents, dramatic shadows
+   ═══════════════════════════════════════ */
+
+body.theme-analco {
+  letter-spacing: 0.01em;
+
+  h1, .tb-hero__title {
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem) !important;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.08;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+    font-weight: 500;
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: var(--tb-accent);
+      margin: 1rem auto 0;
+    }
+  }
+  h3 { font-weight: 600; }
+  h4 { font-weight: 600; font-size: 1.1rem; }
+
+  .tb-section {
+    padding: 5rem 0 !important;
+    &__header { margin-bottom: 3rem !important; }
+    &__label {
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      text-transform: none;
+      color: var(--tb-accent);
+      font-style: italic;
+    }
+  }
+
+  .tb-btn {
+    border-radius: 4px !important;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-weight: 500;
+    padding: 0.75rem 1.8rem;
+    transition: all 0.4s ease;
+    &--primary {
+      background: var(--tb-accent);
+      border-color: var(--tb-accent);
+      color: #1c1814;
+      font-weight: 600;
+      &:hover { background: var(--tb-primary); border-color: var(--tb-primary); color: #1c1814; }
+    }
+    &--outline {
+      border-color: var(--tb-accent);
+      color: var(--tb-accent);
+      &:hover { background: var(--tb-accent); color: #1c1814; }
+    }
+    &--whatsapp {
+      background: var(--tb-accent);
+      border-color: var(--tb-accent);
+      color: #1c1814;
+      font-weight: 600;
+      &:hover { background: var(--tb-primary); border-color: var(--tb-primary); }
+    }
+    &--lg { padding: 0.95rem 2.4rem; font-size: 0.95rem; }
+    &--white {
+      background: #fff;
+      color: #1c1814;
+      border-color: #fff;
+    }
+  }
+
+  .tb-card, .rounded-4 {
+    border: 1px solid transparent;
+    box-shadow: var(--tb-shadow-md) !important;
+    &:hover { border-color: var(--tb-accent); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important; }
+  }
+
+  .tb-gallery__swiper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .tb-form {
+    border: 1px solid var(--tb-border);
+    box-shadow: var(--tb-shadow-md);
+    padding: 2.5rem;
+    background: var(--section-surface);
+    .form-control, .form-select {
+      border-radius: 6px;
+      border: 1px solid var(--tb-border);
+      padding: 0.75rem 1rem;
+      &:focus {
+        border-color: var(--tb-accent);
+        box-shadow: 0 0 0 0.2rem rgba(var(--tb-accent-rgb), 0.15);
+      }
+    }
+  }
+
+  .scheme-dark {
+    background: #12100d;
+    --section-bg: #12100d;
+    --section-surface: #1c1a16;
+    --section-text: var(--tb-secondary);
+    --section-muted: rgba(var(--tb-secondary-rgb), 0.6);
+    --section-border: rgba(var(--tb-secondary-rgb), 0.08);
+  }
+
+  .scheme-color {
+    --section-bg: #1c1814;
+    --section-text: var(--tb-secondary);
+    --section-muted: rgba(var(--tb-secondary-rgb), 0.7);
+    background: linear-gradient(135deg, #1c1814 0%, #2a2318 100%);
+    .tb-btn--outline {
+      color: var(--tb-accent) !important;
+      border-color: var(--tb-accent) !important;
+      &:hover { background: var(--tb-accent) !important; color: #1c1814 !important; }
+    }
+    .tb-btn--white { color: #1c1814; font-weight: 600; }
+  }
+
+  .tb-header {
+    border-bottom: 1px solid rgba(var(--tb-accent-rgb), 0.2);
+    background: rgba(18, 16, 14, 0.97);
+  }
+
+  .tb-footer {
+    border-top: 1px solid rgba(var(--tb-accent-rgb), 0.15);
+    background: #12100d;
+    color: var(--tb-secondary);
+    a { color: var(--tb-accent); }
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-analco {
+    .tb-section { padding: 3.5rem 0 !important; }
+    h1 { font-size: 2.2rem !important; }
+    h2 { font-size: 1.7rem !important; }
+  }
+}

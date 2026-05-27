@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════
+   Section LESS — Packages1
+   Tabs con pricing y detalles de paquetes
+   ═══════════════════════════════════════ */
+
+.tb-packages {
+  &__tab {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    transition: all var(--tb-transition);
+    color: var(--section-muted);
+    border: 1px solid var(--section-border);
+    &:hover { color: var(--section-text); border-color: var(--section-text); }
+    &.active {
+      background: var(--section-text);
+      color: var(--section-bg);
+      border-color: var(--section-text);
+    }
+  }
+  &__name {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--button-bg, var(--tb-primary));
+    margin-bottom: 0.25rem;
+  }
+  &__extras {
+    padding: 1rem;
+    margin: 1rem 0;
+    background: rgba(var(--tb-primary-rgb), 0.05);
+    border-left: 2px solid var(--button-bg, var(--tb-primary));
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0;
+      font-size: 0.88rem;
+      color: var(--section-text);
+    }
+  }
+  &__section {
+    &-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--section-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      i { color: var(--icon-color, var(--tb-primary)); }
+    }
+    &-item {
+      padding: 0.3rem 0;
+      font-size: 0.88rem;
+      color: var(--section-text);
+      border-bottom: 1px solid var(--section-border);
+      &:last-child { border-bottom: none; }
+    }
+  }
+}

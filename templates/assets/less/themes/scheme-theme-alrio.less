@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════
+   Theme: Alrio — Warm Terracotta Modern
+   Zapopan · commercial cálida · terracota + salvia
+   ═══════════════════════════════════════ */
+
+body.theme-alrio {
+  --tb-primary: #c4785a;
+  --tb-primary-rgb: 196, 120, 90;
+  --tb-secondary: #f5ede4;
+  --tb-secondary-rgb: 245, 237, 228;
+  --tb-accent: #5a7c6b;
+  --tb-accent-rgb: 90, 124, 107;
+  --tb-bg: #fdf9f5;
+  --tb-surface: #f0e8de;
+  --tb-surface-alt: #e8ddd0;
+  --tb-text: #2a1f1a;
+  --tb-muted: #8a7266;
+  --tb-border: rgba(196, 120, 90, 0.16);
+  --tb-heading-font: 'Playfair Display', Georgia, serif;
+  --tb-body-font: 'DM Sans', system-ui, sans-serif;
+  --tb-radius-sm: 0.25rem;
+  --tb-radius-md: 0.5rem;
+  --tb-radius-lg: 1rem;
+  --tb-shadow-sm: 0 2px 12px rgba(42, 31, 26, 0.06);
+  --tb-shadow-md: 0 8px 28px rgba(42, 31, 26, 0.1);
+  --tb-transition: 0.3s ease;
+
+  background-color: var(--tb-bg);
+  color: var(--tb-text);
+
+  h1, h2, h3, h4 {
+    font-family: var(--tb-heading-font);
+    color: var(--tb-text);
+  }
+
+  h1, .tb-hero__title {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+  }
+
+  .tb-section {
+    padding: 5.5rem 0;
+    &__header { margin-bottom: 3rem; }
+    &__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tb-accent);
+    }
+    &__subtitle {
+      color: var(--tb-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+  }
+
+  .tb-btn {
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &--primary {
+      background: var(--tb-primary);
+      border-color: var(--tb-primary);
+      color: #fff;
+      &:hover { background: #b06a4d; border-color: #b06a4d; }
+    }
+
+    &--outline {
+      color: var(--tb-text);
+      border-color: rgba(196, 120, 90, 0.4);
+      &:hover { background: var(--tb-primary); border-color: var(--tb-primary); color: #fff; }
+    }
+
+    &--whatsapp {
+      background: #25d366;
+      border-color: #25d366;
+      color: #fff;
+      &:hover { background: #1ebe57; border-color: #1ebe57; }
+    }
+
+    &--lg { padding: 0.9rem 2.2rem; font-size: 0.9rem; }
+  }
+
+  .tb-card {
+    background: var(--tb-surface);
+    border: 1px solid var(--tb-border);
+    border-radius: var(--tb-radius-md);
+    transition: all var(--tb-transition);
+    &:hover { border-color: rgba(196, 120, 90, 0.4); box-shadow: var(--tb-shadow-md); }
+  }
+
+  .tb-gallery__slide { border-radius: var(--tb-radius-md); overflow: hidden; }
+  .tb-form { border-radius: var(--tb-radius-md); }
+  .tb-form .form-control,
+  .tb-form .form-select {
+    border-radius: var(--tb-radius-sm);
+    background: var(--tb-surface);
+    border-color: var(--tb-border);
+    color: var(--tb-text);
+    &::placeholder { color: var(--tb-muted); }
+    &:focus { border-color: var(--tb-primary); background: var(--tb-surface); color: var(--tb-text); box-shadow: 0 0 0 3px rgba(196, 120, 90, 0.12); }
+  }
+  .tb-form label { color: var(--tb-muted); font-size: 0.85rem; }
+
+  .tb-avatar { border: 3px solid var(--tb-primary); border-radius: 50%; }
+
+  /* ── scheme-dark overrides para Alrio ── */
+  &.scheme-dark {
+    --section-bg: #2d1f17;
+    --section-surface: #3d2a1e;
+    --section-text: #f5ede4;
+    --section-muted: rgba(245, 237, 228, 0.6);
+    --section-border: rgba(196, 120, 90, 0.2);
+    --heading-color: #f5ede4;
+    --accent-color: #c4785a;
+    --icon-color: #c4785a;
+    --button-bg: #c4785a;
+    --button-text: #fff;
+    background-color: #2d1f17;
+    color: #f5ede4;
+  }
+
+  /* ── scheme-color overrides para Alrio ── */
+  &.scheme-color {
+    --section-bg: #c4785a;
+    --section-surface: rgba(45, 31, 23, 0.35);
+    --section-text: #fff;
+    --section-muted: rgba(255, 255, 255, 0.78);
+    --section-border: rgba(255, 255, 255, 0.2);
+    --heading-color: #fff;
+    --accent-color: #f5ede4;
+    --icon-color: #f5ede4;
+    --button-bg: #f5ede4;
+    --button-text: #2d1f17;
+    background-color: #c4785a;
+    color: #fff;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-alrio .tb-section { padding: 3.5rem 0; }
+}

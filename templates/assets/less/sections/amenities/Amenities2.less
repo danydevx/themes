@@ -1,0 +1,40 @@
+/* ═══════════════════════════════════════
+   Section LESS — Amenities2
+   Cards de categorías con iconos + listas
+   ═══════════════════════════════════════ */
+
+.tb-amenities {
+  &__card {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    padding: 1.5rem;
+    height: 100%;
+    transition: border-color var(--tb-transition);
+    &:hover { border-color: var(--section-text); }
+  }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    color: var(--icon-color, var(--tb-primary));
+    background: rgba(var(--tb-primary-rgb), 0.08);
+    margin-bottom: 0.75rem;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    font-size: 0.88rem;
+    color: var(--section-muted);
+    i { color: var(--icon-color, var(--tb-primary)); font-size: 0.85rem; }
+  }
+}

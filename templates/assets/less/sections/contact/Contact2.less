@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════
+   Section LESS — Contact2
+   Formulario + tarjeta de info lateral
+   ═══════════════════════════════════════ */
+
+.tb-contact {
+  &__info-card {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    padding: 2rem;
+    height: 100%;
+  }
+  &__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--section-border);
+    &:last-child { border-bottom: none; }
+    i {
+      color: var(--icon-color, var(--tb-primary));
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+  }
+  &__info-label {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--section-text);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+  &__info-text {
+    font-size: 0.9rem;
+    color: var(--section-muted);
+  }
+  &__info-image {
+    width: 100%;
+    border-radius: var(--tb-radius-sm);
+    object-fit: cover;
+    border: 1px solid var(--section-border);
+    margin-top: 1.5rem;
+  }
+}

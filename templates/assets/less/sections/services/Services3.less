@@ -1,0 +1,40 @@
+/* ═══════════════════════════════════════
+   Section LESS — Services3
+   Grid numerado con títulos y descripciones
+   ═══════════════════════════════════════ */
+
+.tb-services {
+  &__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--button-bg, var(--tb-primary));
+    color: var(--button-text, #fff);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+  }
+  &__item {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    padding: 1.5rem;
+    height: 100%;
+    transition: border-color var(--tb-transition);
+    &:hover { border-color: var(--section-text); }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  &__desc {
+    font-size: 0.9rem;
+    color: var(--section-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+}

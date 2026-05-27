@@ -1,0 +1,32 @@
+/* ═══════════════════════════════════════
+   Section LESS — CTA2
+   Split: texto + imagen con highlights y botones
+   ═══════════════════════════════════════ */
+
+.tb-cta {
+  &__image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border: 1px solid var(--section-border);
+  }
+  &__highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: var(--section-muted);
+    i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: var(--icon-color, var(--tb-primary));
+      color: #fff;
+      font-size: 0.7rem;
+    }
+  }
+}

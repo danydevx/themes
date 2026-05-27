@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════
+   Section LESS — Header1
+   Navbar clásico: logo izquierda, nav derecha
+   ═══════════════════════════════════════ */
+
+.tb-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(252, 253, 254, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--tb-border);
+  padding: 0.75rem 0;
+  transition: box-shadow var(--tb-transition);
+
+  &.scrolled { box-shadow: var(--tb-shadow-sm); }
+
+  &__logo {
+    font-family: var(--tb-heading-font);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--tb-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.02em;
+    &:hover { color: var(--tb-primary); }
+    i { font-size: 1.4rem; color: var(--tb-primary); }
+  }
+}

@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════
+   Section LESS — Contact Form
+   Variantes: Contact1-3
+   ═══════════════════════════════════════ */
+
+.tb-form {
+  background: var(--section-surface);
+  border: 1px solid var(--section-border);
+  padding: 2.5rem;
+
+  .form-label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--section-text);
+  }
+
+  .form-control,
+  .form-select {
+    padding: 0.8rem 1rem;
+    border-radius: var(--tb-radius-sm);
+    border-color: var(--section-border);
+    background: var(--section-bg);
+    color: var(--section-text);
+    font-family: var(--tb-body-font);
+    &:focus {
+      border-color: var(--tb-primary);
+      box-shadow: 0 0 0 0.15rem rgba(var(--tb-primary-rgb), 0.15);
+    }
+  }
+}

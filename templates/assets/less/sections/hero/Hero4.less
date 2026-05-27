@@ -1,0 +1,24 @@
+/* ═══════════════════════════════════════
+   Section LESS — Hero4
+   Fullscreen con overlay sutil, título centrado, CTA inferior
+   ═══════════════════════════════════════ */
+
+.tb-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+}

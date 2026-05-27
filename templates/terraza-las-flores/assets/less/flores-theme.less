@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════
+   Terraza Las Flores — Theme-specific overrides
+   Festivo familiar: colorido, dinámico, cards grandes, iconos
+   ═══════════════════════════════════════ */
+
+body.theme-flores {
+  letter-spacing: 0.005em;
+
+  h1, .tb-hero__title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+    font-weight: 800;
+    &::after {
+      content: '';
+      display: block;
+      width: 40px; height: 3px;
+      background: var(--tb-primary);
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .tb-section {
+    padding: 4.5rem 0 !important;
+    &__header { margin-bottom: 2.5rem !important; }
+    &__label {
+      letter-spacing: 0.04em;
+      font-size: 0.88rem;
+      text-transform: none;
+      font-weight: 700;
+      color: var(--tb-accent);
+    }
+    &__header--left .tb-section__title::after { left: 0; transform: none; margin-left: 0; }
+  }
+
+  .tb-btn {
+    border-radius: 50px !important;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    &:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14); }
+    &--primary {
+      background: var(--tb-primary);
+      border-color: var(--tb-primary);
+      color: #fff;
+      &:hover { background: var(--tb-accent); border-color: var(--tb-accent); }
+    }
+    &--outline {
+      border: 2px solid var(--tb-primary);
+      color: var(--tb-primary);
+      background: transparent;
+      &:hover { background: var(--tb-primary); color: #fff; }
+    }
+    &--whatsapp {
+      background: #25d366; border-color: #25d366; color: #fff;
+      &:hover { background: #1ebe57; border-color: #1ebe57; }
+    }
+    &--white {
+      background: #fff; color: var(--tb-text); border-color: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      &:hover { background: var(--tb-secondary); border-color: var(--tb-secondary); }
+    }
+    &--lg { padding: 0.95rem 2.4rem; font-size: 1rem; }
+  }
+
+  .tb-card, .rounded-4 {
+    border-radius: 20px !important;
+    box-shadow: var(--tb-shadow-md) !important;
+    border: 2px solid transparent;
+    overflow: hidden;
+    &:hover { border-color: var(--tb-primary); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important; }
+  }
+
+  .tb-card__icon {
+    border-radius: 50%;
+    background: var(--tb-primary);
+    color: #fff;
+    width: 3.5rem; height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .tb-gallery__grid-link {
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: var(--tb-shadow-sm);
+  }
+
+  .tb-form {
+    border-radius: 20px !important;
+    border: 2px solid var(--tb-border);
+    box-shadow: var(--tb-shadow-sm);
+    .form-control, .form-select {
+      border-radius: 12px !important;
+      border: 2px solid var(--tb-border);
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      &:focus { border-color: var(--tb-primary); box-shadow: 0 0 0 0.2rem rgba(var(--tb-primary-rgb), 0.15); }
+    }
+  }
+
+  .tb-pool__feature-card { border-radius: 20px !important; }
+  .tb-pool__main-img { border-radius: 20px !important; }
+  .tb-pool__safety { border-radius: 20px !important; }
+
+  .tb-section--pad-sm { padding: 2.5rem 0 !important; }
+  .tb-section--pad-md { padding: 4.5rem 0 !important; }
+  .tb-section--pad-lg { padding: 6rem 0 !important; }
+  .tb-section--pad-xl { padding: 8rem 0 !important; }
+
+  .tb-avatar { border-radius: 50% !important; border: 3px solid var(--tb-primary); }
+
+  .scheme-color {
+    --section-bg: var(--tb-primary);
+    --section-text: #fff;
+    --section-muted: rgba(255, 255, 255, 0.85);
+    .tb-btn--outline {
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      &:hover { background: rgba(255, 255, 255, 0.15) !important; border-color: rgba(255, 255, 255, 0.8) !important; }
+    }
+  }
+
+  .tb-header {
+    border-bottom: 2px solid var(--tb-border);
+  }
+
+  .tb-footer {
+    border-top: 2px solid var(--tb-border);
+    &__social a { border-radius: 50% !important; }
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-flores {
+    .tb-section { padding: 3rem 0 !important; }
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.6rem !important; }
+  }
+}

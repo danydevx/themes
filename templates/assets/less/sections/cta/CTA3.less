@@ -1,0 +1,27 @@
+/* ═══════════════════════════════════════
+   Section LESS — CTA3
+   Banner con overlay oscuro y botones pill
+   ═══════════════════════════════════════ */
+
+.tb-cta {
+  &__banner-bg {
+    background-size: cover;
+    background-position: center;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+  }
+  &__banner-title {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    color: #fff;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+  &__banner-text {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+}

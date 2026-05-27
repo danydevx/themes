@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════
+   Theme: Minimalista Arquitectónico
+   Grid rígido, bordes finos, neutros
+   ═══════════════════════════════════════ */
+
+body.theme-architectural {
+  letter-spacing: 0.01em;
+
+  h1, .tb-hero__title {
+    font-size: clamp(2rem, 4vw, 3.2rem) !important;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  .tb-section {
+    padding: 5rem 0 !important;
+    &__header { margin-bottom: 3rem !important; }
+    &__label { letter-spacing: 0.25em; font-size: 0.7rem; color: var(--tb-muted); }
+    &__title {
+      &::before {
+        content: '';
+        display: block;
+        width: 40px; height: 1px;
+        background: var(--tb-text);
+        margin: 0 auto 1rem;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .tb-btn {
+    border-radius: 0 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 0.7rem 1.6rem;
+  }
+
+  .tb-card, .rounded-4 {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid var(--tb-border);
+    &:hover { border-color: var(--tb-text); transform: none; box-shadow: none !important; }
+  }
+
+  .tb-form { border-radius: 0 !important; border: 1px solid var(--tb-border); }
+  .tb-form .form-control, .tb-form .form-select { border-radius: 0 !important; }
+  .tb-gallery__slide { border-radius: 0; }
+
+  .tb-footer { border-top: 1px solid var(--tb-border); }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-architectural {
+    .tb-section { padding: 3.5rem 0 !important; }
+    h1 { font-size: 1.8rem !important; }
+  }
+}

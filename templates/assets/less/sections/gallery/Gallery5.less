@@ -1,0 +1,18 @@
+/* ═══════════════════════════════════════
+   Section LESS — Gallery5
+   Swiper con thumbnails + GLightbox
+   ═══════════════════════════════════════ */
+
+.tb-gallery {
+  &__slide {
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    &:hover img { transform: scale(1.03); }
+  }
+}

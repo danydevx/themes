@@ -1,0 +1,46 @@
+/* ═══════════════════════════════════════
+   Theme: Moderno Comercial
+   Compacto, CTA visibles, iconos funcionales
+   ═══════════════════════════════════════ */
+
+body.theme-commercial {
+  h1, .tb-hero__title {
+    font-size: clamp(2rem, 3.5vw, 3rem) !important;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem) !important;
+    font-weight: 700;
+  }
+
+  .tb-section {
+    padding: 4rem 0 !important;
+    &__header { margin-bottom: 2.5rem !important; }
+    &__label { letter-spacing: 0.1em; font-size: 0.8rem; }
+  }
+
+  .tb-btn {
+    border-radius: 8px !important;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  .tb-card, .rounded-4 {
+    border-radius: 12px !important;
+    box-shadow: var(--tb-shadow-sm) !important;
+    border: 1px solid var(--tb-border);
+    &:hover { box-shadow: var(--tb-shadow-md) !important; transform: translateY(-2px); }
+  }
+
+  .tb-card__icon { border-radius: 12px; width: 3rem; height: 3rem; font-size: 1.3rem; }
+
+  .tb-footer { padding: 3rem 0 1.5rem !important; }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-commercial {
+    .tb-section { padding: 3rem 0 !important; }
+    h1 { font-size: 1.9rem !important; }
+  }
+}

@@ -1,0 +1,25 @@
+/* ═══════════════════════════════════════
+   Section LESS — Gallery1
+   Swiper con overlay + GLightbox
+   ═══════════════════════════════════════ */
+
+.tb-gallery {
+  &__swiper {
+    overflow: hidden;
+    .swiper-slide {
+      cursor: pointer;
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      &:hover img { transform: scale(1.03); }
+    }
+    .swiper-pagination-bullet {
+      background: var(--section-text);
+      opacity: 0.4;
+      &-active { opacity: 1; background: var(--tb-accent); }
+    }
+  }
+}

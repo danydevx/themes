@@ -1,0 +1,53 @@
+/* ═══════════════════════════════════════
+   Theme: Premium Luxury
+   Oscuro, serif grande, detalles dorados
+   ═══════════════════════════════════════ */
+
+body.theme-luxury {
+  h1, .tb-hero__title {
+    font-size: clamp(2.5rem, 4.5vw, 3.8rem) !important;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+    font-weight: 500;
+  }
+
+  .tb-btn {
+    border-radius: 4px !important;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-weight: 500;
+  }
+
+  .tb-section {
+    padding: 5rem 0 !important;
+    &__label { letter-spacing: 0.12em; font-size: 0.75rem; text-transform: none; }
+    &__title {
+      &::after {
+        content: '';
+        display: block;
+        width: 60px; height: 2px;
+        background: var(--tb-accent);
+        margin: 1rem auto 0;
+      }
+    }
+  }
+
+  .tb-card, .rounded-4 {
+    border: 1px solid transparent;
+    box-shadow: var(--tb-shadow-md) !important;
+    &:hover { border-color: var(--tb-accent); transform: translateY(-2px); }
+  }
+
+  .tb-gallery__slide { border-radius: 8px; overflow: hidden; }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-luxury {
+    .tb-section { padding: 3.5rem 0 !important; }
+    h1 { font-size: 2.2rem !important; }
+  }
+}

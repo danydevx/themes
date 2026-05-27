@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════
+   Section LESS — Footer4
+   Footer multi-columna con social y copyright
+   ═══════════════════════════════════════ */
+
+.tb-footer {
+  padding: 4rem 0 0;
+  background: var(--section-bg);
+  color: var(--section-text);
+  border-top: 1px solid var(--section-border);
+
+  &__heading {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--section-text);
+  }
+  &__text {
+    font-size: 0.88rem;
+    color: var(--section-muted);
+    line-height: 1.6;
+  }
+  &__link {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 0.88rem;
+    color: var(--section-muted);
+    transition: color var(--tb-transition);
+    &:hover { color: var(--section-text); }
+  }
+  &__social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--section-border);
+    color: var(--section-muted);
+    font-size: 0.9rem;
+    transition: all var(--tb-transition);
+    margin-right: 0.5rem;
+    &:hover {
+      background: var(--icon-color, var(--tb-primary));
+      border-color: var(--icon-color, var(--tb-primary));
+      color: #fff;
+    }
+  }
+  &__bottom {
+    margin-top: 3rem;
+    padding: 1.25rem 0;
+    background: var(--section-surface);
+    font-size: 0.82rem;
+    color: var(--section-muted);
+    a {
+      color: var(--section-muted);
+      margin-left: 1.25rem;
+      &:hover { color: var(--section-text); }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════
+   Section LESS — About1
+   Imagen + beneficios en dos columnas
+   ═══════════════════════════════════════ */
+
+.tb-about {
+  &__img {
+    width: 100%;
+    border-radius: var(--tb-radius-lg);
+    object-fit: cover;
+    box-shadow: var(--tb-shadow-md);
+    border: 1px solid var(--section-border);
+  }
+
+  &__benefit {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--section-border);
+    &:last-child { border-bottom: none; }
+
+    i {
+      font-size: 1.4rem;
+      color: var(--icon-color, var(--tb-primary));
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    h5 {
+      font-family: var(--tb-heading-font);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: var(--heading-color, var(--tb-text));
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--section-muted);
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* ═══════════════════════════════════════
+   Section LESS — Pricing2
+   Tabla comparativa horizontal
+   ═══════════════════════════════════════ */
+
+.tb-pricing {
+  &__table {
+    border: 1px solid var(--section-border);
+    overflow: hidden;
+  }
+  &__feature-col {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--section-muted);
+    padding: 0.75rem 1rem;
+    border-right: 1px solid var(--section-border);
+    background: var(--section-surface);
+  }
+  &__feature-cell {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--section-border);
+    &:last-child { border-right: none; }
+    i.bi-check-circle-fill { color: var(--tb-primary); font-size: 1rem; }
+    i.bi-dash { color: var(--section-border); }
+    .feature-label-mobile { font-size: 0.72rem; color: var(--section-muted); }
+  }
+  &__plan-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid var(--section-border);
+    background: var(--section-surface);
+    &:last-child { border-right: none; }
+    &--highlight {
+      border: 2px solid var(--tb-primary);
+      background: rgba(var(--tb-primary-rgb), 0.04);
+    }
+  }
+  &__plan-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--section-text);
+  }
+  &__plan-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--button-bg, var(--tb-primary));
+    line-height: 1.2;
+    margin: 0.5rem 0;
+  }
+  &__plan-unit {
+    font-size: 0.8rem;
+    color: var(--section-muted);
+  }
+  &__highlight-badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--tb-primary);
+    border: 1px solid var(--tb-primary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+}

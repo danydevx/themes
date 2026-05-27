@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    "DESIGN-RULES.md",
+    "CSS-ARCHITECTURE.md",
+    "TEMPLATE-SYSTEM.md",
+    "CONTENT.md"
+  ],
+  "permission": {
+    "skill": {
+      "*": "allow"
+    }
+  },
+  "agent": {
+    "build": {
+      "tools": {
+        "skill": true
+      }
+    },
+    "plan": {
+      "tools": {
+        "skill": true
+      }
+    }
+  }
+}

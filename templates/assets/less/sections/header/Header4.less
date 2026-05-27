@@ -1,0 +1,73 @@
+/* ═══════════════════════════════════════
+   Section LESS — Header4
+   Header minimal con offcanvas slide-out
+   STICKY + RESPONSIVE para todos los templates
+   ═══════════════════════════════════════ */
+
+.tb-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(var(--tb-bg-rgb, 252, 252, 253), 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--tb-border);
+  padding: 0.75rem 0;
+  transition: box-shadow var(--tb-transition);
+
+  &.scrolled { box-shadow: var(--tb-shadow-sm); }
+
+  &__logo {
+    font-family: var(--tb-heading-font);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--tb-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &:hover { color: var(--tb-primary); }
+    i { font-size: 1.4rem; color: var(--tb-primary); }
+  }
+
+  .navbar-toggler {
+    padding: 0.4rem;
+    border: 1.5px solid var(--tb-border) !important;
+    border-radius: 4px;
+    &:focus { box-shadow: none; }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(43,43,43,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+/* ── Offcanvas slide-out ── */
+.offcanvas {
+  background: var(--tb-surface) !important;
+  color: var(--tb-text) !important;
+  border-left: 1px solid var(--tb-border) !important;
+
+  .offcanvas-header {
+    border-bottom: 1px solid var(--tb-border) !important;
+    .offcanvas-title {
+      font-family: var(--tb-heading-font);
+      font-weight: 700;
+      color: var(--tb-text);
+    }
+    .btn-close {
+      filter: none;
+      opacity: 0.6;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  .nav-link {
+    color: var(--tb-text);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--tb-border);
+    transition: color var(--tb-transition), background var(--tb-transition);
+    &:hover { color: var(--tb-primary); background: rgba(var(--tb-primary-rgb), 0.04); }
+    &:last-child { border-bottom: none; }
+  }
+}

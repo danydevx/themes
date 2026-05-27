@@ -1,0 +1,48 @@
+/* ═══════════════════════════════════════
+   Theme: Romántico Social
+   Suave, curvas, fotos grandes, cálido
+   ═══════════════════════════════════════ */
+
+body.theme-romantic {
+  h1, .tb-hero__title {
+    font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.7rem, 3vw, 2.3rem) !important;
+    font-weight: 600;
+  }
+
+  .tb-section {
+    padding: 5rem 0 !important;
+    &__label { letter-spacing: 0.08em; font-size: 0.8rem; text-transform: none; color: var(--tb-accent); }
+  }
+
+  .tb-btn {
+    border-radius: 50px !important;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    padding: 0.8rem 2.2rem;
+    &--lg { padding: 0.95rem 2.8rem; }
+  }
+
+  .tb-card, .rounded-4 {
+    border-radius: 16px !important;
+    box-shadow: var(--tb-shadow-sm) !important;
+    border: 1px solid var(--tb-border);
+    &:hover { border-color: var(--tb-accent); transform: translateY(-3px); box-shadow: var(--tb-shadow-md) !important; }
+  }
+
+  .tb-card__icon { border-radius: 50%; background: var(--tb-secondary); }
+  .tb-form { border-radius: 16px !important; }
+  .tb-form .form-control, .tb-form .form-select { border-radius: 50px !important; }
+  .tb-gallery__slide { border-radius: 16px; overflow: hidden; }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-romantic {
+    .tb-section { padding: 3.5rem 0 !important; }
+    h1 { font-size: 2rem !important; }
+  }
+}

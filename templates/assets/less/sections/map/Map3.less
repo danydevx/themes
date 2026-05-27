@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════
+   Section LESS — Map3
+   Google Maps iframe + tarjeta de contacto lateral
+   ═══════════════════════════════════════ */
+
+.tb-map {
+  &__frame {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border: 1px solid var(--section-border);
+  }
+  &__card {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    padding: 2rem;
+    height: 100%;
+  }
+  &__address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--section-muted);
+    i { color: var(--icon-color, var(--tb-primary)); margin-top: 0.15rem; flex-shrink: 0; }
+  }
+}

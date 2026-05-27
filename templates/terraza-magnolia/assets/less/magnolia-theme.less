@@ -1,0 +1,104 @@
+/* ═══════════════════════════════════════
+   Terraza Magnolia — Theme-specific overrides
+   Personalización sobre el theme editorial
+   ═══════════════════════════════════════ */
+
+body.theme-magnolia {
+  letter-spacing: 0.02em;
+
+  h1, .tb-hero__title {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem) !important;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem) !important;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  h3 { font-size: 1.2rem; }
+
+  .tb-section {
+    padding: 6rem 0 !important;
+    &__header { margin-bottom: 4rem !important; }
+    &__label {
+      letter-spacing: 0.2em !important;
+      font-size: 0.72rem;
+      color: var(--tb-accent);
+    }
+    &__title {
+      position: relative;
+      padding-bottom: 1.25rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 48px; height: 1px;
+        background: var(--tb-primary);
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .shadow-sm, .shadow-lg { box-shadow: none !important; border: 1px solid var(--tb-border) !important; }
+
+  .tb-btn {
+    border-radius: 2px !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    padding: 0.75rem 2rem;
+    &--lg { padding: 0.9rem 2.5rem; font-size: 0.85rem; }
+  }
+
+  .tb-card, .rounded-4 {
+    box-shadow: none !important;
+    border: 1px solid var(--tb-border);
+    &:hover { border-color: var(--tb-primary); transform: none; box-shadow: none !important; }
+  }
+  .tb-testimonial__card { border: 1px solid var(--tb-border); box-shadow: none; }
+  .tb-form { border: 1px solid var(--tb-border); box-shadow: none; border-radius: var(--tb-radius-sm) !important; }
+  .tb-form .form-control, .tb-form .form-select {
+    border-radius: 2px !important;
+    border: 1px solid var(--tb-border);
+    padding: 0.75rem 1rem;
+  }
+
+  .scheme-color {
+    --section-bg: var(--tb-alt1);
+    --section-text: var(--tb-secondary);
+    --section-muted: rgba(var(--tb-secondary-rgb), 0.78);
+    .tb-btn--outline {
+      color: var(--section-text) !important;
+      border-color: rgba(var(--tb-secondary-rgb), 0.45) !important;
+      &:hover { background: rgba(var(--tb-secondary-rgb), 0.12) !important; border-color: rgba(var(--tb-secondary-rgb), 0.7) !important; color: var(--section-text) !important; }
+    }
+    .tb-btn--white { color: var(--tb-primary); }
+    .tb-fs-label { color: var(--section-muted) !important; }
+  }
+
+  .tb-footer {
+    padding: 5rem 0 2.5rem !important;
+    border-top: 1px solid var(--tb-border);
+  }
+  .tb-section--pad-sm { padding: 3rem 0 !important; }
+  .tb-section--pad-md { padding: 5rem 0 !important; }
+  .tb-section--pad-lg { padding: 7rem 0 !important; }
+  .tb-section--pad-xl { padding: 9rem 0 !important; }
+
+  .tb-section__header--left {
+    text-align: left;
+    .tb-section__subtitle { margin: 0; }
+    .tb-section__title::after { left: 0; transform: none; margin: 0.75rem 0 0 0; }
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-magnolia {
+    .tb-section { padding: 4rem 0 !important; }
+    .tb-section__header { margin-bottom: 2.5rem !important; }
+    h1 { font-size: 2.5rem !important; }
+  }
+}

@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════
+   Section LESS — FAQ Accordion
+   Variantes: FAQ1-3
+   ═══════════════════════════════════════ */
+
+.accordion-item {
+  background: var(--section-surface);
+  border: 1px solid var(--section-border);
+  border-radius: var(--tb-radius-sm) !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background: var(--section-surface);
+  color: var(--section-text);
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: all 0.25s ease;
+  &:not(.collapsed) { background: var(--section-surface); color: var(--section-text); box-shadow: none; }
+  &:focus { box-shadow: none; border-color: transparent; }
+  &::after { background-size: 1rem; width: 1rem; height: 1rem; }
+}
+
+.accordion-body {
+  color: var(--section-muted);
+  line-height: 1.7;
+}

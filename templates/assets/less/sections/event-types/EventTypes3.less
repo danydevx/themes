@@ -1,0 +1,37 @@
+/* ═══════════════════════════════════════
+   Section LESS — EventTypes3
+   Alternating rows: imagen izq/der + texto
+   ═══════════════════════════════════════ */
+
+.tb-event-types {
+  &__row {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    &:last-child { margin-bottom: 0; }
+
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    h3 {
+      font-family: var(--tb-heading-font);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--heading-color, var(--tb-text));
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--section-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+  }
+}

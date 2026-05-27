@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════
+   Section LESS — Amenities1
+   Categorías con íconos en grid de pills
+   ═══════════════════════════════════════ */
+
+.tb-amenities {
+  &__category {
+    margin-bottom: 2.5rem;
+    &:last-child { margin-bottom: 0; }
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+
+      h4 {
+        font-family: var(--tb-heading-font);
+        font-weight: 700;
+        font-size: 1.05rem;
+        margin: 0;
+        color: var(--heading-color, var(--tb-text));
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__pill {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: 50px;
+    transition: all var(--tb-transition);
+
+    i {
+      color: var(--icon-color, var(--tb-primary));
+      font-size: 0.95rem;
+    }
+
+    span {
+      color: var(--section-text);
+      font-size: 0.82rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    &:hover {
+      border-color: var(--tb-primary);
+      background: rgba(var(--tb-primary-rgb), 0.06);
+    }
+  }
+}

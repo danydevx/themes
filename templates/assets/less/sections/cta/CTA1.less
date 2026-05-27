@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════
+   Section LESS — CTA1
+   Bloque centrado scheme-color con WhatsApp
+   ═══════════════════════════════════════ */
+
+.tb-cta {
+  text-align: center;
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    color: var(--section-text);
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  }
+
+  &__text {
+    color: var(--section-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,58 @@
+/* ═══════════════════════════════════════
+   Theme: Festivo Familiar
+   Colorido, dinámico, cards grandes, iconos
+   ═══════════════════════════════════════ */
+
+body.theme-family {
+  h1, .tb-hero__title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+    font-weight: 700;
+  }
+
+  .tb-section {
+    padding: 4.5rem 0 !important;
+    &__header { margin-bottom: 2.5rem !important; }
+    &__label { letter-spacing: 0.06em; font-size: 0.85rem; text-transform: none; font-weight: 700; }
+  }
+
+  .tb-btn {
+    border-radius: 12px !important;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-weight: 700;
+    padding: 0.85rem 2rem;
+    &--lg { padding: 1rem 2.5rem; font-size: 1rem; }
+  }
+
+  .tb-card, .rounded-4 {
+    border-radius: 20px !important;
+    box-shadow: var(--tb-shadow-md) !important;
+    border: 2px solid transparent;
+    &:hover { border-color: var(--tb-primary); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important; }
+  }
+
+  .tb-card__icon {
+    border-radius: 50%;
+    background: var(--tb-primary);
+    color: #fff;
+    width: 4rem; height: 4rem;
+    font-size: 1.8rem;
+  }
+
+  .tb-gallery__slide { border-radius: 20px; overflow: hidden; }
+  .tb-form { border-radius: 20px !important; }
+  .tb-form .form-control, .tb-form .form-select { border-radius: 12px !important; }
+  .tb-avatar { border-radius: 50% !important; border: 3px solid var(--tb-primary); }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-family {
+    .tb-section { padding: 3rem 0 !important; }
+    h1 { font-size: 2rem !important; }
+  }
+}

@@ -1,0 +1,49 @@
+/* ═══════════════════════════════════════
+   Section LESS — Testimonials3
+   Google-style: rating summary + cards con avatar y reply
+   ═══════════════════════════════════════ */
+
+.tb-testimonials {
+  &__rating-box {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  &__review-card {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    padding: 1.25rem;
+    height: 100%;
+    transition: border-color var(--tb-transition), box-shadow var(--tb-transition);
+
+    &:hover {
+      border-color: var(--tb-primary);
+      box-shadow: var(--tb-shadow-sm);
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__reply {
+    background: rgba(var(--tb-primary-rgb), 0.05);
+    border-radius: var(--tb-radius-md);
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  &__like {
+    border-top: 1px solid var(--section-border);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}

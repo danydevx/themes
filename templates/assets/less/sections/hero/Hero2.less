@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════
+   Section LESS — Hero2
+   Split layout: texto izquierda, imagen derecha
+   ═══════════════════════════════════════ */
+
+.tb-hero {
+  background-size: cover;
+  background-position: center;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 13, 11, 0.88) 0%,
+      rgba(15, 13, 11, 0.55) 50%,
+      rgba(15, 13, 11, 0.25) 100%
+    );
+    z-index: 1;
+  }
+
+  .container { position: relative; z-index: 2; }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(200, 169, 110, 0.9);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+  }
+
+  &__text {
+    color: rgba(240, 235, 227, 0.75);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tb-hero {
+    min-height: 85vh;
+    padding: 6rem 0 4rem;
+    &__title { font-size: 2.2rem; }
+    &__actions { flex-direction: column; align-items: flex-start; }
+  }
+}

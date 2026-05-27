@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════
+   Theme: Valle — Campestre
+   Casa de campo Cajititlán · rústico cálido
+   ═══════════════════════════════════════ */
+
+body.theme-valle {
+  --tb-primary: #7d8a5e;
+  --tb-primary-rgb: 125, 138, 94;
+  --tb-secondary: #f7f3ed;
+  --tb-secondary-rgb: 247, 243, 237;
+  --tb-accent: #b5673c;
+  --tb-accent-rgb: 181, 103, 60;
+  --tb-bg: #fdfcfa;
+  --tb-surface: #f5f0e8;
+  --tb-text: #2e2416;
+  --tb-muted: #8a7a66;
+  --tb-border: rgba(125, 138, 94, 0.18);
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--tb-text);
+  }
+
+  h1, .tb-hero__title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h2, .tb-section__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+  }
+
+  .tb-section {
+    padding: 5rem 0;
+    &__header { margin-bottom: 3rem; }
+    &__label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tb-accent);
+    }
+    &__subtitle {
+      color: var(--tb-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+  }
+
+  .tb-btn {
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+    font-size: 0.88rem;
+
+    &--primary {
+      background: var(--tb-primary);
+      border-color: var(--tb-primary);
+      &:hover { background: var(--tb-accent); border-color: var(--tb-accent); }
+    }
+
+    &--outline {
+      color: var(--tb-text);
+      border-color: var(--tb-border);
+      &:hover { background: var(--tb-primary); border-color: var(--tb-primary); color: #fff; }
+    }
+  }
+
+  .tb-testimonials__text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+  }
+
+  .tb-card {
+    border-radius: 12px;
+    box-shadow: var(--tb-shadow-sm);
+    border: 1px solid var(--tb-border);
+    transition: all var(--tb-transition);
+    &:hover {
+      box-shadow: var(--tb-shadow-md);
+      border-color: var(--tb-primary);
+    }
+  }
+
+  .tb-gallery__slide { border-radius: 12px; overflow: hidden; }
+  .tb-form { border-radius: 12px; }
+  .tb-form .form-control,
+  .tb-form .form-select { border-radius: 8px; }
+}
+
+@media (max-width: 767.98px) {
+  body.theme-valle .tb-section { padding: 3.5rem 0; }
+}

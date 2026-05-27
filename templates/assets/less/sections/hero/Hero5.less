@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════
+   Section LESS — Hero5
+   Full-screen con floating card inferior
+   ═══════════════════════════════════════ */
+
+.tb-hero {
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.05) 100%);
+    z-index: 1;
+  }
+
+  .container { position: relative; z-index: 2; }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: var(--tb-primary);
+    color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tb-hero {
+    min-height: 85vh;
+    padding-bottom: 2rem;
+    &__title { font-size: 2.2rem; }
+  }
+}

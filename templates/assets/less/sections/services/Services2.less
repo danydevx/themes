@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════
+   Section LESS — Services2
+   Filas alternadas con iconos y badges
+   ═══════════════════════════════════════ */
+
+.tb-services {
+  &__row {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--section-border);
+    &:last-child { border-bottom: none; }
+  }
+  &__badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tb-primary);
+    background: rgba(var(--tb-primary-rgb), 0.08);
+    border-radius: 50px;
+  }
+  &__icon {
+    font-size: 2rem;
+    color: var(--icon-color, var(--tb-primary));
+    margin-bottom: 0.75rem;
+  }
+}

@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════
+   Section LESS — Testimonials4
+   Swiper con chat bubbles, avatares y estrellas
+   ═══════════════════════════════════════ */
+
+.tb-testimonials {
+  &__swiper {
+    max-width: 820px;
+    margin: 0 auto;
+    .swiper-pagination-bullet-active { background: var(--tb-accent); }
+  }
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border: 2px solid var(--tb-accent);
+    flex-shrink: 0;
+  }
+  &__bubble {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    padding: 1.5rem;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 20px;
+      width: 0; height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid var(--section-border);
+    }
+  }
+  &__stars {
+    color: var(--tb-accent);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  &__text {
+    font-size: 0.95rem;
+    color: var(--section-text);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  &__author {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--section-text);
+  }
+  &__date {
+    font-size: 0.78rem;
+    color: var(--section-muted);
+  }
+  &__event-badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.72rem;
+    color: var(--tb-accent);
+    border: 1px solid var(--tb-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}

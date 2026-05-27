@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════
+   Section LESS — Hero7
+   Full-screen luxury con overlays y stats
+   ═══════════════════════════════════════ */
+
+.tb-hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+
+  &__overline {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tb-accent);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 600;
+    line-height: 1.05;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  &__text {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 520px;
+  }
+
+  &__stat {
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    &-value {
+      font-family: var(--tb-heading-font);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--tb-accent);
+    }
+    &-label {
+      font-size: 0.78rem;
+      opacity: 0.7;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+}

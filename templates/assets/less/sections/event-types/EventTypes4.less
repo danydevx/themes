@@ -1,0 +1,23 @@
+/* ═══════════════════════════════════════
+   Section LESS — EventTypes4
+   Lista editorial numerada con iconos
+   ═══════════════════════════════════════ */
+
+.tb-event-types {
+  &__item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--section-border);
+    transition: border-color var(--tb-transition);
+    &:hover { border-color: var(--tb-primary); }
+  }
+  &__index {
+    font-family: var(--tb-heading-font);
+    font-size: 2rem;
+    color: var(--accent-color, var(--tb-accent));
+    opacity: 0.5;
+  }
+  &__icon {
+    font-size: 1.5rem;
+    color: var(--icon-color, var(--tb-primary));
+  }
+}
