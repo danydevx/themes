@@ -20,7 +20,7 @@
               $itemIcon = is_array($item) ? ($item['icon'] ?? 'bi-check-lg') : 'bi-check-lg';
           ?>
             <div class="col-6 col-md-4 col-lg-3">
-              <div class="tb-amenities__pill d-flex align-items-start gap-2 p-2 rounded-3">
+              <div class="tb-amenities__pill d-flex align-items-start gap-2 p-2 p-md-3 rounded-3 rounded-md-4">
                 <span class="tb-amenities__check" aria-hidden="true">
                   <i class="bi <?= esc($itemIcon) ?>"></i>
                 </span>

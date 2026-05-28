@@ -16,6 +16,40 @@ Este archivo contiene referencias reales de venues en México para usar como ins
 - El copy final debe estar en español mexicano formal, trato de "usted".
 - Evitar anglicismos en salida final (`lounge`, `DJ booth`, `half-day`, `full-time`, `playlist`, etc.).
 
+**Aplicación con presets/schemes:**
+
+- Si el template usa presets de color, adaptar matices del copy al preset sin duplicar estructura.
+- Permitir combinaciones por sección (ej. header light, hero color, footer dark) manteniendo coherencia de tono y legibilidad.
+
+---
+
+## Uso con páginas laboratorio (depuración)
+
+Cuando se esté depurando contenido/copy por variantes en `templates/terraza-oblatos/`, usar las páginas laboratorio para validar legibilidad por scheme:
+
+- `heroes.php`
+- `availability.php`
+- `cta.php`
+- `about.php`
+- `amenities.php`
+
+Reglas rápidas:
+
+1. No duplicar estructura de secciones; ajustar solo copy y datos de prueba.
+2. Verificar lectura en `scheme-light`, `scheme-soft`, `scheme-dark`, `scheme-color`.
+3. Si el copy pierde contraste, priorizar claridad del texto sobre adorno visual.
+
+---
+
+## Continuidad para mañana (handoff de contenido)
+
+Al cerrar jornada, dejar en la salida final:
+
+1. Variantes y páginas lab donde se ajustó copy.
+2. Qué variante queda pendiente para retomar mañana.
+3. Qué scheme presenta mayor riesgo de legibilidad.
+4. Mensajes WhatsApp/copy de CTA que deben conservarse en la siguiente sesión.
+
 ---
 
 ## Perfil típico de cliente

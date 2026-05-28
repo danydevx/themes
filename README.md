@@ -31,3 +31,7 @@ Sistema de templates PHP modulares para terrazas, jardines y salones de eventos.
 ## QA rápida
 
 - Use `docs/QA-CHECKLIST.md` antes de entregar cualquier template.
+
+## Presets de tema
+
+- Use `docs/THEME-PRESETS.md` para manejar varios schemes sin duplicar carpetas de template.

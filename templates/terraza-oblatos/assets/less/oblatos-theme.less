@@ -48,51 +48,136 @@ body.theme-oblatos {
     &:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(52, 78, 65, 0.15); border-color: var(--tb-primary); }
   }
 
+  /* Sections used by this template */
+  .tb-about--7__feature-card,
+  .tb-services--4__card,
+  .tb-event-types--6__card,
+  .tb-packages--3__card,
+  .tb-testimonials--8__card,
+  .tb-map--5__card,
+  .tb-contact--3 .tb-form,
+  .tb-faq--4 .accordion-item {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-color: var(--card-border) !important;
+  }
+
+  .tb-about--7,
+  .tb-services--4,
+  .tb-event-types--6,
+  .tb-packages--3,
+  .tb-testimonials--8,
+  .tb-faq--4,
+  .tb-contact--3,
+  .tb-map--5,
+  .tb-footer--7,
+  .tb-hero--10 {
+    .text-muted,
+    small,
+    p {
+      color: var(--card-muted);
+    }
+  }
+
+  .tb-faq--4 .accordion-button,
+  .tb-faq--4 .accordion-body,
+  .tb-contact--3 .form-control,
+  .tb-contact--3 .form-select,
+  .tb-contact--3 .form-label {
+    color: var(--card-text);
+  }
+
+  .tb-faq--4 .accordion-button:not(.collapsed) {
+    background: var(--card-bg);
+  }
+
+  .tb-map--5__icon,
+  .tb-hero--10__feature-icon,
+  .tb-services--4__num {
+    color: var(--icon-strong);
+  }
+
+  .tb-gallery--7__overlay,
+  .tb-testimonials--8 blockquote,
+  .tb-faq--4 .accordion-body,
+  .tb-packages--3__meta,
+  .tb-map--5 .small {
+    color: var(--card-muted);
+  }
+
+  .tb-packages--3__highlight-bar,
+  .tb-services--4__num,
+  .tb-gallery--7__grid::-webkit-scrollbar-thumb,
+  .tb-event-types--6__scroll-wrapper::-webkit-scrollbar-thumb {
+    background: var(--icon-strong);
+  }
+
+  .tb-event-types--6__scroll-wrapper::-webkit-scrollbar-track {
+    background: var(--card-border);
+  }
+
+  .tb-map--5__card:hover,
+  .tb-services--4__card:hover,
+  .tb-about--7__feature-card:hover,
+  .tb-event-types--6__card:hover {
+    border-color: var(--icon-strong) !important;
+  }
+
+  .tb-map--5__card:hover .tb-map--5__icon {
+    background: var(--icon-strong) !important;
+    color: var(--btn-primary-text) !important;
+  }
+
   .tb-gallery__item { border-radius: 10px; overflow: hidden; }
   .tb-gallery__overlay { border-radius: 0 0 10px 10px; }
   .tb-form { border-radius: 10px !important; }
   .tb-form .form-control, .tb-form .form-select { border-radius: 8px !important; }
   .tb-avatar { border-radius: 50% !important; border: 2px solid var(--tb-primary); }
 
-  .tb-testimonials--7__card { border-radius: 10px !important; }
-  .tb-event-types--5__card { border-radius: 10px !important; }
+  .tb-testimonials--8__card { border-radius: 10px !important; }
+  .tb-event-types--6__card { border-radius: 10px !important; }
 
   .accordion-item { border-radius: 10px !important; border: 1px solid var(--section-border); overflow: hidden; }
   .accordion-button { border-radius: 0 !important; }
   .accordion-button:not(.collapsed) { background: var(--section-surface); }
 
-  .tb-packages--2__step { border-radius: 8px !important; }
+  .tb-packages--3__card { border-radius: 8px !important; }
 
-  .tb-map--4__card { border-radius: 10px !important; }
-}
+  .tb-map--5__card { border-radius: 10px !important; }
 
-/* ── Scheme overrides for Oblatos ── */
-.scheme-dark {
-  --section-bg: #344e41;
-  --section-surface: #3a5a40;
-  --section-text: #f7f5f2;
-  --section-muted: rgba(247, 245, 242, 0.72);
-  --section-border: rgba(247, 245, 242, 0.12);
-  --heading-color: #f7f5f2;
-  --accent-color: #a3b18a;
-  --button-bg: #588157;
-  --button-text: #fff;
-  --icon-color: #a3b18a;
-  color: var(--section-text);
-}
+  .tb-about.scheme-color,
+  .tb-about--3.scheme-color,
+  .tb-about--4.scheme-color,
+  .tb-about--5.scheme-color,
+  .tb-about--6.scheme-color,
+  .tb-about--7.scheme-color {
+    .tb-section__title,
+    .tb-about__milestone-title,
+    .tb-about__title,
+    h3,
+    h4,
+    h5 {
+      color: var(--card-text) !important;
+    }
 
-.scheme-color {
-  --section-bg: #588157;
-  --section-surface: rgba(52, 78, 65, 0.5);
-  --section-text: #f7f5f2;
-  --section-muted: rgba(247, 245, 242, 0.82);
-  --section-border: rgba(247, 245, 242, 0.15);
-  --heading-color: #f7f5f2;
-  --accent-color: #dad7cd;
-  --button-bg: #dad7cd;
-  --button-text: #344e41;
-  --icon-color: #f7f5f2;
-  color: var(--section-text);
+    p,
+    .small,
+    .tb-about__milestone-text,
+    .tb-about__text,
+    .tb-about__features li,
+    .tb-about__stat-unit,
+    .tb-about__stat-label,
+    .tb-about__stat-caption {
+      color: var(--card-muted) !important;
+    }
+
+    .tb-about__number,
+    .tb-about__stat-number,
+    .tb-about--7__stat-number,
+    .tb-about__milestone-title {
+      color: var(--icon-strong) !important;
+    }
+  }
 }
 
 @media (max-width: 767.98px) {

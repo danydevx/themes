@@ -8,12 +8,48 @@
  */
 require_once __DIR__ . '/../sections/section-loader.php';
 
+$scheme = $_GET['scheme'] ?? 'oblatos';
+$allowedSchemes = ['oblatos', 'ocean'];
+if (!in_array($scheme, $allowedSchemes, true)) {
+    $scheme = 'oblatos';
+}
+
+$preset = [
+    'oblatos' => [
+        'brand' => 'Terraza Oblatos',
+        'brand_short' => 'Oblatos',
+        'email' => 'hola@terrazaoblatos.com',
+        'body_class' => 'theme-oblatos',
+        'css_file' => 'assets/css/main-oblatos.css',
+        'header_scheme' => 'scheme-light',
+        'hero_scheme' => 'scheme-dark',
+        'footer_scheme' => 'scheme-dark',
+        'wa_info' => 'Hola, quiero información de Terraza Oblatos.',
+        'wa_visit' => 'Hola, quiero agendar una visita en Terraza Oblatos.',
+        'wa_book' => 'Hola, quiero apartar una fecha en Terraza Oblatos.',
+    ],
+    'ocean' => [
+        'brand' => 'Terraza Oblatos Ocean',
+        'brand_short' => 'Oblatos Ocean',
+        'email' => 'hola@terrazaoblatosocean.com',
+        'body_class' => 'theme-oblatos-ocean',
+        'css_file' => 'assets/css/main-ocean.css',
+        'header_scheme' => 'scheme-light',
+        'hero_scheme' => 'scheme-color',
+        'footer_scheme' => 'scheme-dark',
+        'wa_info' => 'Hola, quiero información de Terraza Oblatos Ocean.',
+        'wa_visit' => 'Hola, quiero agendar una visita en Terraza Oblatos Ocean.',
+        'wa_book' => 'Hola, quiero apartar una fecha en Terraza Oblatos Ocean.',
+    ],
+][$scheme];
+
 $sections = [
     /* ═══ HEADER — sticky con blur ═══ */
     ['type' => 'header', 'variant' => 'Header3', 'data' => [
-        'brand' => 'Oblatos', 'icon' => 'bi-droplet-fill',
+        'scheme' => $preset['header_scheme'],
+        'brand' => $preset['brand_short'], 'icon' => 'bi-droplet-fill',
         'dark' => true,
-        'show_wa' => true, 'wa_link' => wa_link('Hola, quiero información de Terraza Oblatos.'),
+        'show_wa' => true, 'wa_link' => wa_link($preset['wa_info']),
         'links' => [
             ['href' => '#inicio', 'label' => 'Inicio'],
             ['href' => '#alberca', 'label' => 'Alberca'],
@@ -30,19 +66,20 @@ $sections = [
     /* ═══ HERO10 — horizontal split pool hero ═══ */
     ['type' => 'hero', 'variant' => 'Hero10', 'data' => [
         'id' => 'inicio',
-        'scheme' => 'scheme-dark',
+        'scheme' => $preset['hero_scheme'],
+        'use_background' => true,
         'overline' => 'Terraza con alberca · Tlaquepaque',
         'title' => 'El mejor plan:<br>fiesta junto<br>a la alberca',
-        'text' => 'Terraza Oblatos es el lugar donde los invitados no quieren irse. Alberca climatizada, jardín amplio y todo lo necesario para una celebración inolvidable.',
+        'text' => $preset['brand'] . ' es el lugar donde los invitados no quieren irse. Alberca climatizada, jardín amplio y todo lo necesario para una celebración inolvidable.',
         'features' => [
             ['icon' => 'bi-droplet-fill', 'label' => 'Alberca climatizada'],
             ['icon' => 'bi-people', 'label' => 'Hasta 150 invitados'],
             ['icon' => 'bi-sun', 'label' => 'Áreas al aire libre'],
         ],
-        'cta_primary' => ['href' => wa_link('Hola, quiero agendar una visita en Terraza Oblatos.'), 'label' => 'Agendar visita'],
+        'cta_primary' => ['href' => wa_link($preset['wa_visit']), 'label' => 'Agendar visita'],
         'cta_secondary' => ['href' => '#alberca', 'label' => 'Conocer la alberca'],
-        'image' => placeholder('900x700', '344e41', 'a3b18a', 'Oblatos+Alberca+Principal'),
-        'image_alt' => 'Terraza Oblatos con alberca climatizada',
+        'image' => placeholder('1920x1080', '344e41', 'a3b18a', 'Oblatos+Alberca+Principal'),
+        'image_alt' => $preset['brand'] . ' con alberca climatizada',
         'badge' => 'Desde $18,000 MXN',
     ]],
 
@@ -58,7 +95,7 @@ $sections = [
             ['number' => '150', 'label' => 'invitados', 'unit' => 'máx.'],
         ],
         'img' => placeholder('800x600', 'dad7cd', '588157', 'Oblatos+Alberca+Detalle'),
-        'img_alt' => 'Alberca climatizada de Terraza Oblatos',
+        'img_alt' => 'Alberca climatizada de ' . $preset['brand'],
         'img_badge' => 'Alberca principal',
         'features' => [
             ['icon' => 'bi-thermometer-half', 'title' => 'Climatizada todo el año', 'text' => 'Sistema de bomba de calor que mantiene el agua a 30°C. Disponible de enero a diciembre.'],
@@ -168,7 +205,7 @@ $sections = [
     ['type' => 'testimonials', 'variant' => 'Testimonials8', 'data' => [
         'id' => 'resenas', 'scheme' => 'scheme-light', 'padding' => 'md',
         'label' => 'Reseñas', 'title' => 'Lo que dicen quienes ya festejaron',
-        'subtitle' => 'Más de 200 eventos realizados en Terraza Oblatos.',
+        'subtitle' => 'Más de 200 eventos realizados en ' . $preset['brand'] . '.',
         'items' => [
             ['stars' => 5, 'text' => 'Rentamos para el cumpleaños de mi hijo de 15 y fue épico. La alberca estuvo abierta toda la noche y los invitados no paraban de entrar al agua. El sonido era increíble. Volveremos.',
              'author' => 'Carlos M.', 'event' => 'Cumpleaños · Abril 2026'],
@@ -195,7 +232,7 @@ $sections = [
             ['icon' => 'bi-truck', 'q' => '¿Puedo traer mi propio catering?', 'a' => 'Sí, puede traer sus propios proveedores sin costo adicional. También tenemos una lista de caterings recomendados con los que trabajamos frecuentemente.'],
         ],
         'cta_text' => '¿Listo para festejar? Escríbanos.',
-        'cta_link' => wa_link('Hola, quiero apartar una fecha en Terraza Oblatos.'),
+        'cta_link' => wa_link($preset['wa_book']),
         'cta_label' => 'Reservar por WhatsApp',
     ]],
 
@@ -206,15 +243,15 @@ $sections = [
         'address' => 'Calle Oblatos 1420, Col. La Guadalupana, Tlaquepaque, Jalisco',
         'cross_streets' => 'Entre Av. Toluquilla y Callejón del Eden',
         'phone' => '+52 33 1234 5678',
-        'whatsapp' => wa_link('Hola, quiero información de Terraza Oblatos.'),
-        'email' => 'hola@terrazaoblatos.com',
+        'whatsapp' => wa_link($preset['wa_info']),
+        'email' => $preset['email'],
         'hours' => [
             ['days' => 'Lunes a Viernes', 'time' => '10:00 AM - 6:00 PM'],
             ['days' => 'Sábado', 'time' => '10:00 AM - 4:00 PM'],
             ['days' => 'Domingo', 'time' => 'Previa cita'],
         ],
         'map_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14929.052536526394!2d-103.409631!3d20.653916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428add9a9232fe3%3A0x4cf3ee4e3f8b5c6a!2sTlaquepaque%2C%20Jal.!5e0!3m2!1ses!2smx!4v1700000000000',
-        'map_title' => 'Terraza Oblatos en Tlaquepaque',
+        'map_title' => $preset['brand'] . ' en Tlaquepaque',
         'cta_link' => 'https://www.google.com/maps/search/?api=1&query=Calle+Oblatos+1420+Tlaquepaque+Jalisco',
         'cta_label' => 'Cómo llegar por Google Maps',
     ]],
@@ -245,20 +282,21 @@ $sections = [
             ['icon' => 'bi-facebook', 'href' => '#', 'label' => 'Facebook'],
             ['icon' => 'bi-instagram', 'href' => '#', 'label' => 'Instagram'],
             ['icon' => 'bi-tiktok', 'href' => '#', 'label' => 'TikTok'],
-            ['icon' => 'bi-whatsapp', 'href' => wa_link('Hola, quiero información de Terraza Oblatos.'), 'label' => 'WhatsApp'],
+            ['icon' => 'bi-whatsapp', 'href' => wa_link($preset['wa_info']), 'label' => 'WhatsApp'],
         ],
         'hashtag' => 'TerrazaOblatos',
     ]],
 
     /* ═══ FOOTER ═══ */
     ['type' => 'footer', 'variant' => 'Footer7', 'data' => [
-        'logo' => 'Terraza Oblatos', 'logo_icon' => 'bi-droplet-fill',
+        'scheme' => $preset['footer_scheme'],
+        'logo' => $preset['brand'], 'logo_icon' => 'bi-droplet-fill',
         'desc' => 'Terraza con alberca climatizada en Tlaquepaque. El lugar donde las fiestas son realmente memorables. Celebraciones hasta 150 invitados.',
         'social' => [
             ['icon' => 'bi-instagram', 'href' => '#', 'target' => true, 'label' => 'Instagram'],
             ['icon' => 'bi-facebook', 'href' => '#', 'target' => true, 'label' => 'Facebook'],
             ['icon' => 'bi-tiktok', 'href' => '#', 'target' => true, 'label' => 'TikTok'],
-            ['icon' => 'bi-whatsapp', 'href' => wa_link('Hola, quiero información de Terraza Oblatos.'), 'target' => true, 'label' => 'WhatsApp'],
+            ['icon' => 'bi-whatsapp', 'href' => wa_link($preset['wa_info']), 'target' => true, 'label' => 'WhatsApp'],
         ],
         'columns' => [
             ['heading' => 'Navegación', 'links' => [
@@ -273,9 +311,9 @@ $sections = [
         'contact_items' => [
             ['icon' => 'bi-geo-alt', 'text' => 'Calle Oblatos 1420, Col. La Guadalupana, Tlaquepaque, Jalisco'],
             ['icon' => 'bi-telephone', 'text' => '+52 33 1234 5678'],
-            ['icon' => 'bi-envelope', 'text' => 'hola@terrazaoblatos.com'],
+            ['icon' => 'bi-envelope', 'text' => $preset['email']],
         ],
-        'copyright' => '&copy; 2026 Terraza Oblatos. Todos los derechos reservados.',
+        'copyright' => '&copy; 2026 ' . $preset['brand'] . '. Todos los derechos reservados.',
         'legal_links' => [
             ['href' => '#', 'label' => 'Aviso de privacidad'],
             ['href' => '#', 'label' => 'Términos y condiciones'],
@@ -284,8 +322,8 @@ $sections = [
 ];
 
 $site = [
-    'title' => 'Terraza Oblatos | Alberca climatizada para fiestas en Tlaquepaque',
-    'desc' => 'Terraza Oblatos \u2014 Alberca climatizada, jardines y terraza techada para fiestas de cumpleaños, XV años, bodas y celebraciones hasta 150 invitados en Tlaquepaque, Jalisco.',
+    'title' => $preset['brand'] . ' | Alberca climatizada para fiestas en Tlaquepaque',
+    'desc' => $preset['brand'] . ' — Alberca climatizada, jardines y terraza techada para fiestas de cumpleaños, XV años, bodas y celebraciones hasta 150 invitados en Tlaquepaque, Jalisco.',
     'fonts' => 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap',
 ];
 ?>
@@ -302,9 +340,9 @@ $site = [
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="<?= $site['fonts'] ?>" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="<?= esc($preset['css_file']) ?>" rel="stylesheet">
 </head>
-<body class="theme-oblatos">
+<body class="<?= esc($preset['body_class']) ?>">
 
 <?php render_template($sections); ?>
 

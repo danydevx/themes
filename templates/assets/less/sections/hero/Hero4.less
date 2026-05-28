@@ -3,10 +3,12 @@
    Fullscreen con overlay sutil, título centrado, CTA inferior
    ═══════════════════════════════════════ */
 
-.tb-hero {
+.tb-hero--4 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
 
   &__overlay {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 100%);
@@ -15,10 +17,66 @@
     align-items: center;
   }
 
+  &__badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
   &__title {
     font-family: var(--tb-heading-font);
     font-weight: 700;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  &__price {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  &__actions {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.scheme-color,
+  &.scheme-dark {
+    .tb-hero--4__badge,
+    .tb-hero--4__text,
+    .tb-hero--4__price,
+    .tb-hero__title {
+      color: var(--section-text);
+    }
+
+    .tb-hero--4__badge {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tb-hero--4 {
+    min-height: 88vh;
+
+    &__overlay {
+      min-height: 88vh;
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .tb-hero__title {
+      font-size: 2.3rem;
+    }
+
+    &__actions {
+      justify-content: center;
+    }
   }
 }

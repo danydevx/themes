@@ -1,24 +1,29 @@
 <?php /* === HERO FULL-SCREEN MINIMAL === */ ?>
-<section id="<?= esc($data['id'] ?? 'inicio') ?>" class="tb-hero d-flex align-items-center justify-content-center text-center" <?= anim_attrs($data) ?> style="background-image: url('<?= esc($data['bg'] ?? placeholder('1920x1080', '2c2416', 'c06c84', 'Terraza+Mi+Cielo')) ?>'); min-height:calc(100vh - 60px);">
-  <div class="container" style="z-index:2; position:relative;">
-    <span class="tb-fs-label" style="display:inline-block; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-bottom:1rem"><?= esc($data['label'] ?? 'Bienvenidos a') ?></span>
-    <h1 class="tb-hero__title display-2 fw-bold"><?= $data['title'] ?? 'Terraza<br>Mi Cielo' ?></h1>
-    <p class="tb-hero-text mx-auto"><?= esc($data['text'] ?? '') ?></p>
-    <?php if (!empty($data['cta_primary'])): ?>
-      <a class="tb-btn tb-btn--whatsapp tb-btn--lg" href="<?= esc($data['cta_primary']['href'] ?? '#') ?>" target="_blank" rel="noopener">
-        <i class="bi bi-whatsapp"></i> <?= esc($data['cta_primary']['label'] ?? 'Reservar ahora') ?>
+<?php $d = section_defaults($data); ?>
+<?php $bg = $d['bg'] ?: placeholder('1920x1080', '2c2416', 'c06c84', 'Terraza+Mi+Cielo'); ?>
+
+<section id="<?= esc($d['id'] ?: 'inicio') ?>" class="tb-hero tb-hero--3 d-flex align-items-center justify-content-center text-center <?= esc($d['scheme']) ?>" <?= anim_attrs($d) ?> style="background-image: url('<?= esc($bg) ?>');">
+  <div class="container tb-hero--3__container">
+    <?php if (!empty($d['label'])): ?>
+      <span class="tb-hero--3__label"><?= esc($d['label']) ?></span>
+    <?php endif; ?>
+
+    <h1 class="tb-hero__title display-2 fw-bold"><?= $d['title'] ?? 'Terraza<br>Mi Cielo' ?></h1>
+
+    <?php if (!empty($d['text'])): ?>
+      <p class="tb-hero--3__text mx-auto"><?= esc($d['text']) ?></p>
+    <?php endif; ?>
+
+    <?php if (!empty($d['cta_primary'])): ?>
+      <a class="tb-btn tb-btn--whatsapp tb-btn--lg" href="<?= esc($d['cta_primary']['href'] ?? '#') ?>" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i> <?= esc($d['cta_primary']['label'] ?? 'Reservar ahora') ?>
       </a>
     <?php endif; ?>
-    <?php if (!empty($data['scroll_hint'])): ?>
-      <div style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.5); animation:bounce 2s infinite;">
+
+    <?php if (!empty($d['scroll_hint'])): ?>
+      <div class="tb-hero--3__scroll-hint" aria-hidden="true">
         <i class="bi bi-chevron-down fs-4"></i>
       </div>
     <?php endif; ?>
   </div>
 </section>
-<style>
-  @keyframes bounce {
-    0%, 100% { transform:translateX(-50%) translateY(0); }
-    50% { transform:translateX(-50%) translateY(8px); }
-  }
-</style>

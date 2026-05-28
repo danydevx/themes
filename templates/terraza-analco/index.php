@@ -8,17 +8,53 @@
  */
 require_once __DIR__ . '/../sections/section-loader.php';
 
+$scheme = $_GET['scheme'] ?? 'analco';
+$allowedSchemes = ['analco', 'deepblue'];
+if (!in_array($scheme, $allowedSchemes, true)) {
+    $scheme = 'analco';
+}
+
+$preset = [
+    'analco' => [
+        'brand' => 'Terraza Analco',
+        'brand_short' => 'Analco',
+        'email' => 'recepcion@terrazaanalco.com',
+        'body_class' => 'theme-analco',
+        'css_file' => 'assets/css/main.css',
+        'header_scheme' => 'scheme-dark',
+        'hero_scheme' => 'scheme-dark',
+        'footer_scheme' => 'scheme-dark',
+        'wa_info' => 'Hola, quiero información de Terraza Analco.',
+        'wa_visit' => 'Hola, quiero agendar una visita privada en Terraza Analco.',
+        'wa_book' => 'Hola, quiero apartar una fecha en Terraza Analco.',
+    ],
+    'deepblue' => [
+        'brand' => 'Terraza Analco',
+        'brand_short' => 'Analco',
+        'email' => 'recepcion@terrazaanalco.com',
+        'body_class' => 'theme-analco-deepblue',
+        'css_file' => 'assets/css/main-deepblue.css',
+        'header_scheme' => 'scheme-dark',
+        'hero_scheme' => 'scheme-color',
+        'footer_scheme' => 'scheme-dark',
+        'wa_info' => 'Hola, quiero información de Terraza Analco.',
+        'wa_visit' => 'Hola, quiero agendar una visita privada en Terraza Analco.',
+        'wa_book' => 'Hola, quiero apartar una fecha en Terraza Analco.',
+    ],
+][$scheme];
+
 $sections = [
     /* ═══ HEADER — top bar premium + nav ═══ */
     ['type' => 'header', 'variant' => 'Header5', 'data' => [
-        'phone' => '+52 33 1234 5678', 'email' => 'recepcion@terrazaanalco.com',
+        'scheme' => $preset['header_scheme'],
+        'phone' => '+52 33 1234 5678', 'email' => $preset['email'],
         'address' => 'Calle Analco 142, Col. Santa Tere, Guadalajara, Jal.',
         'social_top' => [
             ['icon' => 'bi-instagram', 'href' => '#', 'target' => true, 'label' => 'Instagram'],
             ['icon' => 'bi-facebook', 'href' => '#', 'target' => true, 'label' => 'Facebook'],
         ],
-        'brand' => 'Analco', 'icon' => 'bi-gem',
-        'show_wa' => true, 'wa_link' => wa_link('Hola, quiero información de Terraza Analco.'),
+        'brand' => $preset['brand_short'], 'icon' => 'bi-gem',
+        'show_wa' => true, 'wa_link' => wa_link($preset['wa_info']),
         'links' => [
             ['href' => '#inicio', 'label' => 'Inicio'], ['href' => '#nosotros', 'label' => 'El espacio'],
             ['href' => '#eventos', 'label' => 'Eventos'], ['href' => '#galeria', 'label' => 'Galería'],
@@ -30,13 +66,14 @@ $sections = [
     /* ═══ HERO — cinematográfico oscuro ═══ */
     ['type' => 'hero', 'variant' => 'Hero6', 'data' => [
         'id' => 'inicio',
+        'scheme' => $preset['hero_scheme'],
         'image' => placeholder('600x800', '1c1814', 'b8963e', 'Analco+Terraza'),
         'image_alt' => 'Terraza Analco — vista editorial',
         'image_badge' => 'Desde $5,500 por evento',
         'label' => 'Terraza de lujo en Guadalajara',
         'title' => 'Elegancia que<br>se siente al<br>llegar',
-        'text' => 'Terraza Analco abre sus puertas en la colonia Santa Tere para recibir bodas, cenas de gala y celebraciones donde cada detalle está a la altura de la ocasión.',
-        'cta_primary' => ['href' => wa_link('Hola, quiero agendar una visita privada en Terraza Analco.'), 'label' => 'Visita privada'],
+        'text' => $preset['brand'] . ' abre sus puertas en la colonia Santa Tere para recibir bodas, cenas de gala y celebraciones donde cada detalle está a la altura de la ocasión.',
+        'cta_primary' => ['href' => wa_link($preset['wa_visit']), 'label' => 'Visita privada'],
         'cta_secondary' => ['href' => '#galeria', 'label' => 'Ver galería'],
     ]],
 
@@ -150,17 +187,20 @@ $sections = [
             ['icon' => 'bi-truck', 'q' => '¿Puedo traer mis propios proveedores?', 'a' => 'Sin restricciones. Puede contratar su propio banquete, florista, fotógrafo y DJ. Si lo prefiere, compartimos nuestra lista de proveedores recomendados con quienes trabajamos frecuentemente y ofrecen tarifa preferencial.'],
         ],
         'cta_text' => '¿Listo para reservar? Escríbanos.',
-        'cta_link' => wa_link('Hola, quiero apartar una fecha en Terraza Analco.'),
+        'cta_link' => wa_link($preset['wa_book']),
         'cta_label' => 'Reservar por WhatsApp',
     ]],
 
     /* ═══ CONTACT — form + info lateral ═══ */
-    ['type' => 'contact', 'variant' => 'Contact2', 'data' => [
-        'id' => 'contacto', 'scheme' => 'scheme-soft',
+    ['type' => 'contact', 'variant' => 'Contact4', 'data' => [
+        'id' => 'contacto', 'scheme' => 'scheme-dark',
         'label' => 'Contacto', 'title' => 'Platiquemos su evento ideal',
         'subtitle' => 'Déjenos sus datos y en menos de 12 horas le preparamos una propuesta personalizada sin costo ni compromiso.',
         'btn_label' => 'Solicitar cotización',
-        'info_title' => 'Información de contacto',
+        'info_title' => 'Visítenos en Terraza Analco',
+        'address' => 'Calle Analco 142, Col. Santa Tere, Guadalajara, Jalisco',
+        'map_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14929.052536526394!2d-103.409631!3d20.653916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428add9a9232fe3%3A0x4cf3ee4e3f8b5c6a!2sTlaquepaque%2C%20Jal.!5e0!3m2!1ses!2smx!4v1700000000000',
+        'map_title' => 'Ubicación de Terraza Analco',
         'fields' => [
             ['id' => 'nombre', 'label' => 'Nombre completo', 'placeholder' => 'Su nombre', 'col' => 'col-md-6', 'type' => 'text', 'required' => true],
             ['id' => 'telefono', 'label' => 'Teléfono', 'placeholder' => '33 1234 5678', 'col' => 'col-md-6', 'type' => 'tel', 'required' => true],
@@ -176,32 +216,30 @@ $sections = [
             ]],
             ['id' => 'mensaje', 'label' => 'Mensaje', 'type' => 'textarea', 'placeholder' => 'Cuéntenos cómo imagina su evento en Analco.', 'col' => 'col-12', 'rows' => 3],
         ],
-        'info_items' => [
-            ['icon' => 'bi-geo-alt', 'label' => 'Dirección', 'text' => 'Calle Analco 142, Col. Santa Tere, Guadalajara, Jalisco'],
-            ['icon' => 'bi-telephone', 'label' => 'Teléfono', 'text' => '+52 33 1234 5678'],
-            ['icon' => 'bi-envelope', 'label' => 'Correo', 'text' => 'recepcion@terrazaanalco.com'],
-            ['icon' => 'bi-clock', 'label' => 'Horario de visitas', 'text' => 'Lunes a sábado, 10:00 AM a 6:00 PM'],
+        'social' => [
+            ['icon' => 'bi-instagram', 'href' => '#', 'label' => 'Instagram'],
+            ['icon' => 'bi-facebook', 'href' => '#', 'label' => 'Facebook'],
+            ['icon' => 'bi-tiktok', 'href' => '#', 'label' => 'TikTok'],
+            ['icon' => 'bi-whatsapp', 'href' => wa_link($preset['wa_info']), 'label' => 'WhatsApp'],
         ],
-        'info_image' => placeholder('500x300', 'f5f0e6', 'b8963e', 'Visita+Analco'),
-        'info_image_alt' => 'Agende su visita a Terraza Analco',
-        'info_cta' => ['href' => wa_link('Hola, quiero agendar una visita para conocer Terraza Analco.'), 'label' => 'Agendar visita', 'target' => true],
     ]],
 
     /* ═══ FOOTER — compacto premium ═══ */
     ['type' => 'footer', 'variant' => 'Footer5', 'data' => [
-        'logo' => 'Terraza Analco', 'logo_icon' => 'bi-gem',
-        'copyright' => '&copy; 2026 Terraza Analco. Todos los derechos reservados.',
+        'scheme' => $preset['footer_scheme'],
+        'logo' => $preset['brand'], 'logo_icon' => 'bi-gem',
+        'copyright' => '&copy; 2026 ' . $preset['brand'] . '. Todos los derechos reservados.',
         'social' => [
             ['icon' => 'bi-instagram', 'href' => '#', 'target' => true, 'label' => 'Instagram'],
             ['icon' => 'bi-facebook', 'href' => '#', 'target' => true, 'label' => 'Facebook'],
-            ['icon' => 'bi-whatsapp', 'href' => wa_link('Hola, quiero información de Terraza Analco.'), 'target' => true, 'label' => 'WhatsApp'],
+            ['icon' => 'bi-whatsapp', 'href' => wa_link($preset['wa_info']), 'target' => true, 'label' => 'WhatsApp'],
         ],
     ]],
 ];
 
 $site = [
-    'title' => 'Terraza Analco | Jardín de lujo para eventos en Guadalajara',
-    'desc' => 'Terraza Analco — Jardín premium para bodas, XV años, cenas de gala y eventos corporativos en Santa Tere, Guadalajara. Elegancia, privacidad y servicio impecable.',
+    'title' => $preset['brand'] . ' | Jardín de lujo para eventos en Guadalajara',
+    'desc' => $preset['brand'] . ' — Jardín premium para bodas, XV años, cenas de gala y eventos corporativos en Santa Tere, Guadalajara. Elegancia, privacidad y servicio impecable.',
     'fonts' => 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap',
 ];
 ?>
@@ -221,9 +259,9 @@ $site = [
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="<?= esc($preset['css_file']) ?>" rel="stylesheet">
 </head>
-<body class="theme-analco">
+<body class="<?= esc($preset['body_class']) ?>">
 
 <?php render_template($sections); ?>
 

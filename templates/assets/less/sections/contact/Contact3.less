@@ -16,17 +16,17 @@
     border-radius: var(--tb-radius-md);
     padding: 0.75rem 1rem;
     font-size: 0.92rem;
-    background: var(--tb-bg);
-    color: var(--tb-text);
+    background: var(--section-bg);
+    color: var(--section-text);
     transition: border-color var(--tb-transition);
 
     &:focus {
-      border-color: var(--tb-primary);
-      box-shadow: 0 0 0 3px rgba(var(--tb-primary-rgb), 0.1);
+      border-color: var(--icon-strong, var(--tb-primary));
+      box-shadow: 0 0 0 3px rgba(var(--tb-primary-rgb), 0.14);
       outline: none;
     }
 
-    &::placeholder { color: var(--tb-muted); }
+    &::placeholder { color: var(--section-muted); }
   }
 
   .form-label {

@@ -14,17 +14,29 @@
 
   &__benefit {
     display: flex;
-    gap: 1rem;
+    gap: 1.1rem;
     align-items: flex-start;
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--section-border);
     &:last-child { border-bottom: none; }
 
-    i {
-      font-size: 1.4rem;
-      color: var(--icon-color, var(--tb-primary));
-      flex-shrink: 0;
-      margin-top: 0.1rem;
+    &-icon {
+      width: 3rem;
+      min-width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--tb-primary-rgb), 0.12);
+      border: 1px solid var(--card-border, var(--section-border));
+      color: var(--icon-strong, var(--icon-color, var(--tb-primary)));
+      margin-top: 0.05rem;
+
+      i {
+        font-size: 1.3rem;
+        line-height: 1;
+      }
     }
 
     h5 {
@@ -37,7 +49,7 @@
 
     p {
       font-size: 0.9rem;
-      color: var(--section-muted);
+      color: var(--card-muted, var(--section-muted));
       margin-bottom: 0;
       line-height: 1.55;
     }

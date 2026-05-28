@@ -3,38 +3,57 @@
    Cards de categorías con iconos + listas
    ═══════════════════════════════════════ */
 
-.tb-amenities {
-  &__card {
-    background: var(--section-surface);
-    border: 1px solid var(--section-border);
-    padding: 1.5rem;
-    height: 100%;
-    transition: border-color var(--tb-transition);
-    &:hover { border-color: var(--section-text); }
+.tb-amenities--2 {
+  .tb-section__subtitle {
+    max-width: 760px;
   }
-  &__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.3rem;
-    color: var(--icon-color, var(--tb-primary));
-    background: rgba(var(--tb-primary-rgb), 0.08);
-    margin-bottom: 0.75rem;
+
+  .tb-amenities__card {
+    background: var(--card-bg, var(--section-surface));
+    border: 1px solid var(--card-border, var(--section-border));
+    transition: transform var(--tb-transition), border-color var(--tb-transition), box-shadow var(--tb-transition);
+
+    &:hover {
+      border-color: var(--icon-strong, var(--tb-primary));
+      transform: translateY(-3px);
+      box-shadow: var(--tb-shadow-sm);
+    }
   }
-  &__title {
-    font-weight: 700;
+
+  .tb-amenities__icon {
+    color: var(--icon-strong, var(--icon-color));
+    background: rgba(var(--tb-primary-rgb), 0.12);
+    border: 1px solid var(--card-border, var(--section-border));
+    margin-bottom: 0;
+  }
+
+  .tb-amenities__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    color: var(--card-text, var(--section-text));
   }
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem 0;
+
+  .tb-amenities__item {
+    padding: 0.35rem 0;
     font-size: 0.88rem;
-    color: var(--section-muted);
-    i { color: var(--icon-color, var(--tb-primary)); font-size: 0.85rem; }
+    color: var(--card-muted, var(--section-muted));
+
+    i {
+      color: var(--icon-strong, var(--icon-color));
+      font-size: 0.9rem;
+    }
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-amenities__item {
+      color: var(--card-muted, var(--section-muted));
+    }
+
+    .tb-amenities__icon {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--card-border, var(--section-border));
+    }
   }
 }

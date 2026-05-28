@@ -1,12 +1,13 @@
 <?php /* === HEADER3 FLEX WITH CTA RIGHT === */ ?>
-<header class="tb-header tb-header--3">
+<?php $d = section_defaults($data); ?>
+<header class="tb-header tb-header--3 <?= esc($d['scheme']) ?>">
   <div class="container">
     <nav class="navbar navbar-expand-lg p-0">
 
       <!-- Logo -->
       <a class="tb-header__logo navbar-brand" href="#">
-        <?php if (!empty($data['icon'])): ?><i class="bi <?= esc($data['icon']) ?>"></i><?php endif; ?>
-        <?= esc($data['brand'] ?? 'Terraza') ?>
+        <?php if (!empty($d['icon'])): ?><i class="bi <?= esc($d['icon']) ?>"></i><?php endif; ?>
+        <?= esc($d['brand'] ?? 'Terraza') ?>
       </a>
 
       <!-- Mobile toggle -->
@@ -17,7 +18,7 @@
       <!-- Nav links center -->
       <div class="collapse navbar-collapse justify-content-center" id="mainNav3">
         <ul class="navbar-nav align-items-lg-center gap-lg-2">
-          <?php foreach ($data['links'] ?? [] as $link): ?>
+          <?php foreach ($d['links'] ?? [] as $link): ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= esc($link['href'] ?? '#') ?>"><?= esc($link['label'] ?? '') ?></a>
             </li>
@@ -26,8 +27,8 @@
       </div>
 
       <!-- CTA right -->
-      <?php if (!empty($data['show_wa'])): ?>
-        <a class="tb-btn tb-btn--whatsapp ms-auto d-none d-lg-inline-flex" href="<?= esc($data['wa_link'] ?? wa_link('Hola, me gustaría recibir información.')) ?>" target="_blank" rel="noopener">
+      <?php if (!empty($d['show_wa'])): ?>
+        <a class="tb-btn tb-btn--whatsapp ms-auto d-none d-lg-inline-flex" href="<?= esc($d['wa_link'] ?? wa_link('Hola, me gustaría recibir información.')) ?>" target="_blank" rel="noopener">
           <i class="bi bi-whatsapp"></i> WhatsApp
         </a>
       <?php endif; ?>

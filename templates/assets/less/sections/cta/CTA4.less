@@ -3,13 +3,80 @@
    Floating card centrada con WhatsApp
    ═══════════════════════════════════════ */
 
-.tb-cta {
-  &__floating {
+.tb-cta--4 {
+  &__card {
     position: relative;
     overflow: hidden;
     background: var(--section-surface);
     border: 1px solid var(--section-border);
     border-radius: var(--tb-radius-lg);
     box-shadow: var(--tb-shadow-md);
+  }
+
+  &__shape {
+    position: absolute;
+    border-radius: 50%;
+
+    &--top {
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: var(--tb-primary);
+      opacity: 0.08;
+    }
+
+    &--bottom {
+      bottom: -60px;
+      left: -60px;
+      width: 180px;
+      height: 180px;
+      background: var(--tb-accent);
+      opacity: 0.06;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__icon-wrap {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--tb-primary), var(--tb-accent));
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+  }
+
+  &__text {
+    color: var(--section-muted);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    border-radius: 50px;
+    padding: 0.8rem 2.5rem;
+  }
+
+  &__subtext {
+    color: var(--section-muted);
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--4__title,
+    .tb-cta--4__text,
+    .tb-cta--4__subtext {
+      color: var(--section-text);
+    }
+
+    .tb-cta--4__text,
+    .tb-cta--4__subtext {
+      opacity: 0.9;
+    }
   }
 }

@@ -4,5 +4,43 @@
    ═══════════════════════════════════════ */
 
 .tb-cta--6 {
-  .tb-section__label { margin-bottom: 1.5rem; }
+  &__content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+    background: var(--tb-primary);
+    color: #fff;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+  }
+
+  &__text,
+  &__note {
+    color: var(--section-muted);
+  }
+
+  .tb-section__label {
+    margin-bottom: 1.5rem;
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--6__title,
+    .tb-cta--6__text,
+    .tb-cta--6__note,
+    .tb-section__label {
+      color: var(--section-text);
+    }
+
+    .tb-cta--6__text,
+    .tb-cta--6__note {
+      opacity: 0.9;
+    }
+  }
 }

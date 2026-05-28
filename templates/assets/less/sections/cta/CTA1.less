@@ -3,7 +3,7 @@
    Bloque centrado scheme-color con WhatsApp
    ═══════════════════════════════════════ */
 
-.tb-cta {
+.tb-cta--1 {
   text-align: center;
 
   &__title {
@@ -26,5 +26,17 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--1__title,
+    .tb-cta--1__text {
+      color: var(--section-text);
+    }
+
+    .tb-cta--1__text {
+      opacity: 0.9;
+    }
   }
 }

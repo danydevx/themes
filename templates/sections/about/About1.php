@@ -16,7 +16,9 @@
       <div class="col-lg-6">
         <?php foreach ($data['benefits'] ?? [] as $b): ?>
           <div class="tb-about__benefit">
-            <i class="bi <?= esc($b['icon'] ?? 'bi-check-circle-fill') ?>"></i>
+            <span class="tb-about__benefit-icon" aria-hidden="true">
+              <i class="bi <?= esc($b['icon'] ?? 'bi-check-circle-fill') ?>"></i>
+            </span>
             <div>
               <h5><?= esc($b['title'] ?? '') ?></h5>
               <p><?= esc($b['text'] ?? '') ?></p>

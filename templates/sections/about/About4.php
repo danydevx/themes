@@ -1,6 +1,6 @@
 <?php /* === ABOUT STAGGERED ALTERNATING === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'nosotros') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?><?= bg_style($d) ?>">
+<section id="<?= esc($d['id'] ?: 'nosotros') ?>" class="tb-section tb-about tb-about--4 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?><?= bg_style($d) ?>">
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>

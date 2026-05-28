@@ -3,7 +3,7 @@
    Editorial split: imagen + texto con CTA WhatsApp
    ═══════════════════════════════════════ */
 
-.tb-cta {
+.tb-cta--5 {
   &__image {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -46,5 +46,19 @@
 
   &__btn-primary {
     letter-spacing: 0.03em;
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--5__title,
+    .tb-cta--5__text,
+    .tb-cta--5__note {
+      color: var(--section-text);
+    }
+
+    .tb-cta--5__text,
+    .tb-cta--5__note {
+      opacity: 0.9;
+    }
   }
 }

@@ -3,35 +3,32 @@
    Cinematográfico: imagen vertical derecha, texto izquierda
    ═══════════════════════════════════════ */
 
-.tb-hero {
+.tb-hero--6 {
   background: var(--section-bg);
   color: var(--section-text);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
 
-  &__badge {
-    display: inline-block;
-    padding: 0.4rem 1.2rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--tb-accent);
-    border: 1px solid var(--tb-accent);
-    margin-bottom: 1.5rem;
+  &__row {
+    min-height: 90vh;
+  }
+
+  &__content {
+    max-width: 600px;
   }
 
   &__label {
     font-size: 0.78rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--tb-accent);
+    color: var(--tb-primary);
     margin-bottom: 0.75rem;
   }
 
   &__title {
     font-family: var(--tb-heading-font);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--section-text);
     line-height: 1.08;
   }
@@ -39,14 +36,44 @@
   &__text {
     color: var(--section-muted);
     font-size: 1.05rem;
-    max-width: 460px;
+    max-width: 480px;
   }
 
   &__image {
     width: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    border: 1px solid rgba(var(--tb-accent-rgb), 0.25);
+    border: 1px solid rgba(var(--tb-primary-rgb), 0.25);
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  }
+
+  &__image-badge {
+    background: var(--btn-bg, var(--tb-primary));
+    color: var(--btn-text, #fff);
+    font-size: 0.85rem;
+  }
+
+  &__cta {
+    border-radius: 50px;
+  }
+
+  &__bg-element {
+    background: linear-gradient(135deg, transparent 60%, rgba(var(--tb-primary-rgb), 0.06));
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tb-hero--6 {
+    min-height: auto;
+
+    &__row {
+      min-height: auto;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
   }
 }

@@ -3,11 +3,86 @@
    Editorial magazine cover: split asimétrico, imagen vertical, ornamentos
    ═══════════════════════════════════════ */
 
-.tb-hero {
+.tb-hero--8 {
   background: var(--section-bg);
   color: var(--section-text);
+  min-height: 100vh;
+
+  &__row {
+    min-height: 100vh;
+  }
+
+  &__content {
+    max-width: 560px;
+  }
+
+  &__line {
+    width: 48px;
+    height: 1px;
+    background: var(--tb-primary);
+    display: block;
+  }
+
+  &__overline {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tb-primary);
+  }
+
   &__title {
     font-family: var(--tb-heading-font);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
     color: var(--heading-color, var(--tb-text));
+    letter-spacing: -0.02em;
+  }
+
+  &__text {
+    font-size: 1.15rem;
+    color: var(--section-muted);
+    line-height: 1.7;
+    max-width: 420px;
+  }
+
+  &__cta {
+    border-radius: 2px;
+  }
+
+  &__cta-primary {
+    letter-spacing: 0.03em;
+  }
+
+  &__image {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid var(--section-border);
+  }
+
+  &__caption {
+    color: var(--section-muted);
+    text-align: right;
+  }
+
+  &__ornament {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    color: var(--tb-primary);
+    font-size: 2rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tb-hero--8 {
+    min-height: auto;
+
+    &__row {
+      min-height: auto;
+    }
+
+    &__title {
+      font-size: clamp(2.2rem, 9vw, 3.2rem);
+    }
   }
 }

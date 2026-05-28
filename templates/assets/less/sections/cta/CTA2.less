@@ -3,30 +3,42 @@
    Split: texto + imagen con highlights y botones
    ═══════════════════════════════════════ */
 
-.tb-cta {
+.tb-cta--2 {
+  &__title {
+    font-family: var(--tb-heading-font);
+  }
+
+  &__text {
+    color: var(--section-muted);
+  }
+
+  &__highlights {
+    border-color: var(--section-border) !important;
+  }
+
+  &__highlight-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--tb-primary);
+    color: #fff;
+  }
+
   &__image {
     width: 100%;
     max-height: 380px;
     object-fit: cover;
     border: 1px solid var(--section-border);
   }
-  &__highlight {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-    color: var(--section-muted);
-    i {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-      background: var(--icon-color, var(--tb-primary));
-      color: #fff;
-      font-size: 0.7rem;
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--2__title,
+    .tb-cta--2__text {
+      color: var(--section-text);
+    }
+
+    .tb-cta--2__text {
+      opacity: 0.9;
     }
   }
 }

@@ -1,0 +1,80 @@
+/* ═══════════════════════════════════════
+   Section LESS — Contact4
+   Dark variant with social + mini map
+   ═══════════════════════════════════════ */
+
+.tb-contact--4 {
+  &__form {
+    background: var(--card-bg, var(--section-surface));
+    border: 1px solid var(--card-border, var(--section-border));
+    border-radius: var(--tb-radius-md);
+    padding: 1.25rem;
+  }
+
+  &__aside {
+    background: var(--card-bg, var(--section-surface));
+    border: 1px solid var(--card-border, var(--section-border));
+    border-radius: var(--tb-radius-md);
+    padding: 1.25rem;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+  }
+
+  &__address {
+    color: var(--card-muted, var(--section-muted));
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+
+    i {
+      color: var(--icon-strong, var(--icon-color));
+      margin-top: 0.1rem;
+    }
+  }
+
+  &__map-wrap {
+    border: 1px solid var(--card-border, var(--section-border));
+    border-radius: var(--tb-radius-sm);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  &__map {
+    width: 100%;
+    height: 170px;
+    border: 0;
+    display: block;
+  }
+
+  &__socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  &__social {
+    border: 1px solid var(--card-border, var(--section-border));
+    color: var(--card-text, var(--section-text));
+    border-radius: 999px;
+    padding: 0.5rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    transition: all var(--tb-transition);
+
+    i {
+      color: var(--icon-strong, var(--icon-color));
+    }
+
+    &:hover {
+      background: var(--button-bg);
+      color: var(--button-text);
+      border-color: var(--button-bg);
+    }
+  }
+}

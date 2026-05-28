@@ -48,6 +48,86 @@ body.theme-oblatos-ocean {
     &:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 109, 119, 0.15); border-color: var(--tb-primary); }
   }
 
+  /* Sections used by this template */
+  .tb-about--7__feature-card,
+  .tb-services--4__card,
+  .tb-event-types--6__card,
+  .tb-packages--3__card,
+  .tb-testimonials--8__card,
+  .tb-map--5__card,
+  .tb-contact--3 .tb-form,
+  .tb-faq--4 .accordion-item {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-color: var(--card-border) !important;
+  }
+
+  .tb-about--7,
+  .tb-services--4,
+  .tb-event-types--6,
+  .tb-packages--3,
+  .tb-testimonials--8,
+  .tb-faq--4,
+  .tb-contact--3,
+  .tb-map--5,
+  .tb-footer--7,
+  .tb-hero--10 {
+    .text-muted,
+    small,
+    p {
+      color: var(--card-muted);
+    }
+  }
+
+  .tb-faq--4 .accordion-button,
+  .tb-faq--4 .accordion-body,
+  .tb-contact--3 .form-control,
+  .tb-contact--3 .form-select,
+  .tb-contact--3 .form-label {
+    color: var(--card-text);
+  }
+
+  .tb-faq--4 .accordion-button:not(.collapsed) {
+    background: var(--card-bg);
+  }
+
+  .tb-map--5__icon,
+  .tb-hero--10__feature-icon,
+  .tb-services--4__num {
+    color: var(--icon-strong);
+  }
+
+  .tb-gallery--7__overlay,
+  .tb-testimonials--8 blockquote,
+  .tb-faq--4 .accordion-body,
+  .tb-packages--3__meta,
+  .tb-map--5 .small {
+    color: var(--card-muted);
+  }
+
+  .tb-packages--3__highlight-bar,
+  .tb-services--4__num,
+  .tb-gallery--7__grid::-webkit-scrollbar-thumb,
+  .tb-event-types--6__scroll-wrapper::-webkit-scrollbar-thumb {
+    background: var(--icon-strong);
+  }
+
+  .tb-event-types--6__scroll-wrapper::-webkit-scrollbar-track {
+    background: var(--card-border);
+  }
+
+  .tb-map--5__card:hover,
+  .tb-services--4__card:hover,
+  .tb-about--7__feature-card:hover,
+  .tb-event-types--6__card:hover {
+    border-color: var(--icon-strong) !important;
+  }
+
+  .tb-map--5__card:hover .tb-map--5__icon {
+    background: var(--icon-strong) !important;
+    color: var(--btn-primary-text) !important;
+  }
+
   .tb-gallery__item { border-radius: 10px; overflow: hidden; }
   .tb-gallery__overlay { border-radius: 0 0 10px 10px; }
   .tb-form { border-radius: 10px !important; }
@@ -63,40 +143,41 @@ body.theme-oblatos-ocean {
 
   .tb-packages--3__card { border-radius: 10px !important; }
   .tb-map--5__card { border-radius: 10px !important; }
-}
 
-/* ── Scheme overrides for Ocean Light ── */
-.scheme-dark {
-  --section-bg: #003d44;
-  --section-surface: #005f68;
-  --section-text: #edf6f9;
-  --section-muted: rgba(237, 246, 249, 0.72);
-  --section-border: rgba(131, 197, 190, 0.18);
-  --heading-color: #edf6f9;
-  --accent-color: #e29578;
-  --button-bg: #83c5be;
-  --button-text: #003d44;
-  --icon-color: #83c5be;
-  color: #edf6f9;
-}
+  .tb-about.scheme-color,
+  .tb-about--3.scheme-color,
+  .tb-about--4.scheme-color,
+  .tb-about--5.scheme-color,
+  .tb-about--6.scheme-color,
+  .tb-about--7.scheme-color {
+    .tb-section__title,
+    .tb-about__milestone-title,
+    .tb-about__title,
+    h3,
+    h4,
+    h5 {
+      color: var(--card-text) !important;
+    }
 
-.scheme-color {
-  --section-bg: #006d77;
-  --section-surface: rgba(0, 61, 68, 0.5);
-  --section-text: #edf6f9;
-  --section-muted: rgba(237, 246, 249, 0.82);
-  --section-border: rgba(237, 246, 249, 0.15);
-  --heading-color: #edf6f9;
-  --accent-color: #ffddd2;
-  --button-bg: #e29578;
-  --button-text: #fff;
-  --icon-color: #edf6f9;
-  color: #edf6f9;
-}
+    p,
+    .small,
+    .tb-about__milestone-text,
+    .tb-about__text,
+    .tb-about__features li,
+    .tb-about__stat-unit,
+    .tb-about__stat-label,
+    .tb-about__stat-caption {
+      color: var(--card-muted) !important;
+    }
 
-.scheme-neutral { --section-bg: #edf6f9; --section-surface: #ffddd2; --section-text: #006d77; --section-muted: #5a8a8f; --section-border: rgba(0, 109, 119, 0.15); --heading-color: #006d77; --accent-color: #e29578; --button-bg: #006d77; --button-text: #fff; --icon-color: #006d77; }
-.scheme-light { --section-bg: #edf6f9; --section-surface: #ffddd2; --section-text: #006d77; --section-muted: #5a8a8f; --section-border: rgba(0, 109, 119, 0.15); --heading-color: #006d77; --accent-color: #e29578; --button-bg: #006d77; --button-text: #fff; --icon-color: #006d77; }
-.scheme-soft { --section-bg: #ffddd2; --section-surface: #edf6f9; --section-text: #006d77; --section-muted: #5a8a8f; --section-border: rgba(0, 109, 119, 0.15); --heading-color: #006d77; --accent-color: #e29578; --button-bg: #006d77; --button-text: #fff; --icon-color: #006d77; }
+    .tb-about__number,
+    .tb-about__stat-number,
+    .tb-about--7__stat-number,
+    .tb-about__milestone-title {
+      color: var(--icon-strong) !important;
+    }
+  }
+}
 
 @media (max-width: 767.98px) {
   body.theme-oblatos-ocean {

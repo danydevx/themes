@@ -49,6 +49,16 @@ templates/{template-name}/assets/css/main.css
 templates/{template-name}/assets/js/main.js
 ```
 
+Si un template tiene varias variantes de color pero la misma estructura/secciones,
+usar presets dentro del mismo template (no duplicar carpeta).
+
+Ejemplo de salida por preset:
+
+```txt
+templates/{template-name}/assets/css/main-base.css
+templates/{template-name}/assets/css/main-ocean.css
+```
+
 ---
 
 ## Secciones reutilizables

@@ -3,45 +3,73 @@
    Top bar + navbar premium con logo centrado
    ═══════════════════════════════════════ */
 
-.tb-header {
+.tb-header--5 {
   position: sticky;
   top: 0;
   z-index: 1030;
   background: rgba(18, 16, 14, 0.97);
   backdrop-filter: blur(16px);
-  border-bottom: 3px solid var(--tb-accent);
+  border-bottom: 3px solid var(--card-border);
   padding: 0.75rem 0;
   transition: box-shadow var(--tb-transition);
 
   &.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4); }
 
-  &__top-bar {
-    background: var(--tb-primary);
-    color: #fff;
-    padding: 0.35rem 0;
-    font-size: 0.8rem;
-    a { color: #fff; opacity: 0.85; &:hover { opacity: 1; } }
-  }
-
   &__logo {
     font-family: var(--tb-heading-font);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--tb-secondary);
+    color: var(--card-text);
     display: flex;
     align-items: center;
     gap: 0.5rem;
     letter-spacing: 0.04em;
-    &:hover { color: var(--tb-accent); }
-    i { font-size: 1.4rem; color: var(--tb-accent); }
+    &:hover { color: var(--accent-color); }
+    i { font-size: 1.4rem; color: var(--icon-strong); }
   }
 
   .nav-link {
-    color: rgba(var(--tb-secondary-rgb), 0.8);
+    color: var(--card-muted);
     font-weight: 500;
     font-size: 0.88rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    &:hover { color: var(--tb-accent); }
+    &:hover { color: var(--accent-color); }
+  }
+
+  &.scheme-light,
+  &.scheme-soft,
+  &.scheme-neutral {
+    background: var(--section-bg);
+    border-bottom-color: var(--section-border);
+
+    .tb-header__logo {
+      color: var(--heading-color);
+      &:hover { color: var(--accent-color); }
+      i { color: var(--icon-color); }
+    }
+
+    .nav-link {
+      color: var(--section-text);
+      &:hover { color: var(--accent-color); }
+    }
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    background: var(--section-bg);
+    border-bottom-color: var(--section-border);
+  }
+}
+
+.tb-header--5__top-bar {
+  background: var(--button-bg, var(--tb-primary));
+  color: var(--button-text, #fff);
+  padding: 0.4rem 0;
+
+  a {
+    color: inherit;
+    opacity: 0.85;
+    &:hover { opacity: 1; }
   }
 }

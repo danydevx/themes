@@ -134,6 +134,42 @@ $sections = [
 // <?php render_template($sections); ?>
 ```
 
+### Presets de color sin duplicar templates (obligatorio)
+
+Si un template comparte exactamente las mismas secciones/estructura y solo cambian colores o branding:
+
+- Mantener una sola carpeta de template base.
+- Definir presets en `index.php` (ej. `base`, `ocean`, `dark`) con whitelist.
+- Cambiar por preset: `css_file`, `body_class`, `brand`, `email`, mensajes WA.
+- Generar salida CSS por preset (build-time), por ejemplo:
+  - `assets/css/main-base.css`
+  - `assets/css/main-ocean.css`
+
+No crear carpeta nueva por cada variación de color.
+
+### Schemes por sección (header, hero, footer)
+
+Header, Hero y Footer deben aceptar `scheme` igual que las demás secciones.
+
+Ejemplo en `$sections`:
+
+```php
+['type' => 'header', 'variant' => 'Header3', 'data' => [
+  'scheme' => 'scheme-light',
+  // ...
+]],
+['type' => 'hero', 'variant' => 'Hero10', 'data' => [
+  'scheme' => 'scheme-color',
+  // ...
+]],
+['type' => 'footer', 'variant' => 'Footer7', 'data' => [
+  'scheme' => 'scheme-dark',
+  // ...
+]],
+```
+
+Esto permite combinaciones como: header light + hero color + footer dark.
+
 ---
 
 ## LESS por sección
@@ -155,6 +191,44 @@ El `main.less` del template importa solo lo usado:
 @import "../../../assets/less/sections/header/Header2.less";
 @import "../../../assets/less/sections/hero/Hero8.less";
 ```
+
+### Flujo de depuración por laboratorios (obligatorio)
+
+Cuando se estén corrigiendo variantes existentes (no creando template nuevo), usar páginas laboratorio dentro del template base activo (ej. `templates/terraza-oblatos/`):
+
+- `about.php` para variantes About
+- `amenities.php` para variantes Amenities
+- `heroes.php` para variantes Hero
+- `availability.php` para variantes Availability
+- `cta.php` para variantes CTA
+
+Reglas del flujo:
+
+1. Renderizar varias variantes en una sola página para comparar contraste, ritmo y spacing.
+2. Importar en `main-oblatos.less` y `main-ocean.less` **solo** los LESS necesarios para esa depuración.
+3. Depurar **una variante por vez** (ej. `Hero2` y luego `Hero3`), eliminando estilos inline y moviendo a LESS.
+4. Usar scope de variante (`.tb-hero--2`, `.tb-cta--4`, `.tb-availability--3`) para evitar colisiones.
+5. Validar visualmente schemes `scheme-light`, `scheme-soft`, `scheme-dark`, `scheme-color`.
+6. Recompilar CSS del preset después de cada bloque:
+   - `assets/css/main-oblatos.css`
+   - `assets/css/main-ocean.css`
+
+---
+
+## Continuidad para mañana (handoff)
+
+Al terminar jornada, dejar siempre instrucciones explícitas de continuación en la respuesta final y en el skill-run de trabajo:
+
+- Qué variante se terminó.
+- Qué variante sigue exactamente (siguiente archivo PHP + LESS).
+- Qué pendientes de contraste quedan por scheme.
+- Qué página laboratorio usar para retomar.
+
+Formato recomendado de cierre diario:
+
+1. **Último bloque completado** (ej. `CTA1–CTA6 depurados`).
+2. **Primer paso mañana** (ej. `Depurar Availability2.php y Availability2.less`).
+3. **Comando de compilación al retomar** (`lessc ...main-oblatos.less ...main-oblatos.css` y ocean).
 
 ---
 
@@ -349,6 +423,7 @@ Verificar especialmente en tema oscuro:
 - Usar clases `tb-` para cualquier bloque no trivial.
 - Scopear estilos por sección/variante (ej. `.tb-faq--3`, `.tb-amenities`).
 - Mantener consistencia entre markup PHP y clases definidas en LESS.
+- Centralizar colores por presets (un archivo de color por template base) y evitar duplicar tokens en varios LESS.
 
 ### Checklist de contraste por schemes (obligatorio)
 

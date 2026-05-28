@@ -3,25 +3,72 @@
    Banner con overlay oscuro y botones pill
    ═══════════════════════════════════════ */
 
-.tb-cta {
-  &__banner-bg {
-    background-size: cover;
-    background-position: center;
-    min-height: 380px;
-    display: flex;
-    align-items: center;
+.tb-cta--3 {
+  min-height: 380px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45));
+    z-index: 1;
   }
-  &__banner-title {
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__row {
+    min-height: 380px;
+  }
+
+  &__icon {
+    color: var(--tb-primary);
+    opacity: 0.9;
+  }
+
+  &__title {
     font-family: var(--tb-heading-font);
     font-weight: 700;
     color: #fff;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
-  &__banner-text {
+
+  &__text {
     color: rgba(255, 255, 255, 0.85);
-    max-width: 560px;
-    margin: 0 auto;
-    font-size: 1rem;
+    max-width: 680px;
+  }
+
+  &__btn {
+    font-size: 1.1rem;
+    border-radius: 50px;
+  }
+
+  &__btn-secondary {
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #fff;
+  }
+
+  &__footnote {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &.scheme-color,
+  &.scheme-dark {
+    .tb-cta--3__title,
+    .tb-cta--3__text,
+    .tb-cta--3__footnote,
+    .tb-cta--3__btn-secondary {
+      color: var(--section-text);
+    }
+
+    .tb-cta--3__btn-secondary {
+      border-color: var(--section-text);
+    }
   }
 }
