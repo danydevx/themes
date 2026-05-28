@@ -1,6 +1,6 @@
 <?php /* === CTA6 MINIMAL CENTERED === */ ?>
 <?php $d = section_defaults($data); ?>
-<section class="tb-section tb-cta--6 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?><?= bg_style($d) ?>">
+<section class="tb-section tb-cta--6 <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?><?= bg_style($d) ?>>
   <div class="container">
     <div class="tb-cta--6__content text-center">
 

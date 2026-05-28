@@ -3,8 +3,8 @@
    Swiper con overlay + GLightbox
    ═══════════════════════════════════════ */
 
-.tb-gallery {
-  &__swiper {
+.tb-gallery--1 {
+  .tb-gallery__swiper {
     overflow: hidden;
     .swiper-slide {
       cursor: pointer;
@@ -20,6 +20,18 @@
       background: var(--section-text);
       opacity: 0.4;
       &-active { opacity: 1; background: var(--tb-accent); }
+    }
+  }
+
+  &.scheme-color,
+  &.scheme-dark,
+  &.scheme-linear {
+    .tb-gallery__swiper .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .tb-gallery__swiper .swiper-pagination-bullet-active {
+      background: #ffffff;
     }
   }
 }

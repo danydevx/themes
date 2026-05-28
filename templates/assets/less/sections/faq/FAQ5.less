@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════
+   Section LESS — FAQ5
+   Linear step cards with collapsible answers
+   ═══════════════════════════════════════ */
+
+.tb-faq--5 {
+  &__grid {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  &__card {
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    overflow: hidden;
+    background: var(--card-bg, var(--section-surface));
+  }
+
+  &__trigger {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 42px 1fr 20px;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.95rem 1rem;
+    text-align: left;
+    color: var(--card-text, var(--section-text));
+  }
+
+  &__step {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--btn-primary-text, var(--button-text));
+    background: var(--btn-primary-bg, var(--button-bg));
+  }
+
+  &__question {
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  &__chevron {
+    font-size: 1rem;
+    color: var(--icon-strong, var(--icon-color));
+  }
+
+  &__answer {
+    border-top: 1px solid var(--section-border);
+    padding: 0.85rem 1rem 1rem 4rem;
+    color: var(--card-muted, var(--section-muted));
+    line-height: 1.65;
+  }
+
+  &__cta-text {
+    color: var(--section-muted);
+  }
+
+  &.scheme-color {
+    .tb-section__title,
+    .tb-faq--5__question {
+      color: #ffffff !important;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+      opacity: 1;
+    }
+  }
+
+  &.scheme-linear {
+    .tb-section__title,
+    .tb-faq--5__question {
+      color: #ffffff;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+    }
+
+    .tb-faq--5__card {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .tb-faq--5__answer,
+    .tb-faq--5__cta-text,
+    .tb-section__subtitle {
+      color: var(--section-text);
+      opacity: 0.92;
+    }
+
+    .tb-faq--5__answer {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tb-faq--5 {
+    &__trigger {
+      grid-template-columns: 36px 1fr 18px;
+      gap: 0.6rem;
+      padding: 0.8rem;
+    }
+
+    &__step {
+      width: 36px;
+      height: 36px;
+      font-size: 0.85rem;
+    }
+
+    &__answer {
+      padding: 0.75rem 0.8rem 0.9rem 0.8rem;
+    }
+  }
+}

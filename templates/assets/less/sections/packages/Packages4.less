@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════
+   Section LESS — Packages4
+   Comparison table layout
+   ═══════════════════════════════════════ */
+
+.tb-packages--4 {
+  &__table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--section-border);
+    border-radius: var(--tb-radius-lg);
+    background: var(--section-surface);
+  }
+
+  &__table {
+    min-width: 760px;
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--section-text);
+    margin: 0;
+  }
+
+  &__head {
+    background: rgba(var(--tb-primary-rgb), 0.08) !important;
+    border-bottom: 1px solid var(--section-border);
+    color: var(--heading-color);
+    font-weight: 700;
+    padding: 0.9rem 0.8rem !important;
+  }
+
+  &__head--feature { min-width: 220px; }
+
+  &__plan-name {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  &__plan-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--tb-primary);
+  }
+
+  &__feature,
+  &__cell {
+    border-bottom: 1px solid var(--section-border);
+    padding: 0.8rem !important;
+  }
+
+  &__feature {
+    color: var(--section-text);
+    font-weight: 600;
+  }
+
+  &__value { color: var(--section-muted); }
+  &__ok { color: #2ea36c; font-size: 1rem; }
+  &__no { color: #c05061; font-size: 1rem; }
+
+  &.scheme-color,
+  &.scheme-dark,
+  &.scheme-linear {
+    .tb-packages--4__table-wrap {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .tb-packages--4__head {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: var(--section-text);
+    }
+
+    .tb-packages--4__feature,
+    .tb-packages--4__value {
+      color: var(--section-text);
+      opacity: 0.94;
+    }
+
+    .tb-packages--4__feature,
+    .tb-packages--4__cell {
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .tb-packages--4__plan-price { color: #ffffff; }
+  }
+}

@@ -1,6 +1,6 @@
 <?php /* === GALLERY JUSTIFIED GRID === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section tb-gallery tb-gallery--3 <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>>
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>
@@ -17,7 +17,7 @@
         [3, 3, 3, 3],
       ];
       $imgIdx = 0;
-      $allImages = $data['images'] ?? [];
+      $allImages = $d['images'] ?? [];
       $total = count($allImages);
       foreach ($rows as $row):
         $remaining = $total - $imgIdx;
@@ -26,11 +26,10 @@
       ?>
         <?php for ($c = 0; $c < $colsForRow; $c++, $imgIdx++): $img = $allImages[$imgIdx]; ?>
           <div class="col-sm-<?= $row[$c] ?>">
-            <a class="tb-gallery__slide tb-gallery-lightbox d-block"
+            <a class="tb-gallery--3__grid-item tb-gallery-lightbox d-block"
                href="<?= esc($img['full'] ?? placeholder('1200x900', '2c2416', 'c06c84', $img['alt'] ?? '')) ?>">
               <img src="<?= esc($img['thumb'] ?? placeholder('600x600', '2c2416', 'c06c84', $img['alt'] ?? '')) ?>"
-                   alt="<?= esc($img['alt'] ?? '') ?>" loading="lazy"
-                   style="width:100%; aspect-ratio:1/1; object-fit:cover;">
+                   alt="<?= esc($img['alt'] ?? '') ?>" loading="lazy" class="tb-gallery--3__image">
             </a>
           </div>
         <?php endfor; ?>

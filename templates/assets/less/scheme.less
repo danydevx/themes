@@ -81,7 +81,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ── Sección ── */
 .tb-section {
   padding: 6rem 0;
-  background-color: var(--section-bg, var(--tb-bg));
+  background: var(--section-bg, var(--tb-bg));
 
   &__header {
     text-align: center;
@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; display: block; }
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--tb-primary);
+    color: var(--accent-color, var(--tb-primary));
     margin-bottom: 0.75rem;
   }
 
@@ -109,7 +109,7 @@ img { max-width: 100%; height: auto; display: block; }
 
   &__subtitle {
     font-size: 1.05rem;
-    color: var(--tb-muted);
+    color: var(--section-muted, var(--tb-muted));
     max-width: 560px;
     margin: 0 auto;
     line-height: 1.6;

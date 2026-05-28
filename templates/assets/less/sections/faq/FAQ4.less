@@ -4,6 +4,25 @@
    ═══════════════════════════════════════ */
 
 .tb-faq--4 {
+  &__item {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+
+  &__button {
+    background: var(--section-surface);
+    color: var(--section-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+  }
+
+  &__icon {
+    color: var(--icon-strong, var(--tb-primary));
+  }
+
   .accordion-button:not(.collapsed) {
     background: var(--section-surface);
     color: var(--heading-color);
@@ -18,5 +37,23 @@
     color: var(--section-muted);
     font-size: 0.9rem;
     line-height: 1.7;
+  }
+
+  &__answer {
+    background: var(--section-surface);
+    color: var(--section-muted);
+    padding: 1rem 1.25rem 1.25rem 3rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  &.scheme-color {
+    .tb-section__title,
+    .tb-faq--4__button,
+    .accordion-button {
+      color: #ffffff !important;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+    }
   }
 }

@@ -1,6 +1,6 @@
 <?php /* === GALLERY6 MOSAIC GRID === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section tb-gallery--6 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section tb-gallery--6 <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>>
   <div class="container">
 
     <div class="tb-section__header">
@@ -12,7 +12,7 @@
     <!-- Mosaic grid -->
     <div class="tb-gallery--6__mosaic">
 
-      <?php $images = $data['images'] ?? []; ?>
+      <?php $images = $d['images'] ?? []; ?>
 
       <?php if (!empty($images[0])): ?>
       <div class="tb-gallery--6__item tb-gallery--6__item--large">
@@ -65,10 +65,10 @@
 
     </div>
 
-    <?php if (!empty($data['cta_text'])): ?>
+    <?php if (!empty($d['cta_text'])): ?>
       <div class="text-center mt-4">
-        <a class="tb-btn tb-btn--outline" href="<?= esc($data['cta_link'] ?? '#') ?>">
-          <i class="bi bi-grid-3x3-gap"></i> <?= esc($data['cta_text']) ?>
+        <a class="tb-btn tb-btn--outline" href="<?= esc($d['cta_link'] ?? '#') ?>">
+          <i class="bi bi-grid-3x3-gap"></i> <?= esc($d['cta_text']) ?>
         </a>
       </div>
     <?php endif; ?>

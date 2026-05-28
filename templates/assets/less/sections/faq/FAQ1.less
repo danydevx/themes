@@ -16,21 +16,46 @@
 
   .accordion-button {
     font-family: var(--tb-heading-font);
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 1rem;
     color: var(--section-text);
     background: var(--section-surface);
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.1rem;
     box-shadow: none;
+    gap: 0.7rem;
+    align-items: center;
 
     &:not(.collapsed) {
       background: var(--section-surface);
-      color: var(--tb-primary);
+      color: var(--heading-color, var(--section-text));
     }
 
     &::after {
       background-size: 1rem;
+      opacity: 0.85;
     }
+  }
+
+  &__button:hover {
+    background: color-mix(in srgb, var(--section-surface) 88%, var(--tb-primary) 12%);
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--tb-primary-rgb), 0.14);
+    color: var(--icon-strong, var(--tb-primary));
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  &__question {
+    line-height: 1.35;
+    letter-spacing: -0.01em;
   }
 
   .accordion-body {
@@ -39,5 +64,24 @@
     color: var(--section-muted);
     line-height: 1.65;
     background: var(--section-surface);
+  }
+
+  .tb-faq-answer {
+    border-left-color: var(--section-border) !important;
+  }
+
+  &.scheme-color {
+    .tb-section__title,
+    .accordion-button,
+    .tb-faq-btn {
+      color: #ffffff !important;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .tb-faq--1__icon {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
   }
 }

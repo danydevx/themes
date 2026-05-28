@@ -37,7 +37,17 @@ Reglas rápidas:
 
 1. No duplicar estructura de secciones; ajustar solo copy y datos de prueba.
 2. Verificar lectura en `scheme-light`, `scheme-soft`, `scheme-dark`, `scheme-color`.
-3. Si el copy pierde contraste, priorizar claridad del texto sobre adorno visual.
+3. Incluir también validación en `scheme-linear` cuando la variante lo use.
+4. Si el copy pierde contraste, priorizar claridad del texto sobre adorno visual.
+
+Validación adicional para legibilidad:
+
+- Revisar que iconos informativos (checks, bullets, estados, pasos) tengan contraste suficiente en `scheme-dark`, `scheme-color` y `scheme-linear`.
+- Si se pierden, pedir ajuste de tokens de scheme (`--icon-color`, `--icon-strong`) antes de compensar con copy.
+
+**Ámbito de este skill (importante):**
+- Estas reglas son del proyecto `themes` y se mantienen en `themes/.opencode/skills/`.
+- No mover estas reglas a skills globales.
 
 ---
 

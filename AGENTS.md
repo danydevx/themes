@@ -305,3 +305,30 @@ Al terminar, responder con:
 - Validación de variación visual.
 
 Si el template se parece demasiado a uno anterior, detener la entrega y rediseñar antes de continuar.
+
+---
+
+## Reglas de depuración de secciones existentes (obligatorio)
+
+Cuando se esté depurando una sección existente (no creando template nuevo), aplicar este flujo:
+
+1. Usar página laboratorio del template base (`templates/terraza-oblatos/`):
+   - `about.php`, `amenities.php`, `heroes.php`, `availability.php`, `cta.php`, `faq.php`, `gallery.php`, `services.php`, `packages.php`.
+2. Trabajar una variante por vez.
+3. Corregir wrappers mal formados:
+   - `class="... <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>`
+   - No mezclar `anim_attrs($d)` dentro del string de `class`.
+4. Estandarizar uso de `$d = section_defaults($data)` en toda la sección.
+5. Eliminar estilos inline no triviales y moverlos a LESS de variante.
+6. Usar scope explícito por variante (`.tb-{type}--{n}__*`) para evitar colisiones.
+7. Si se crea una variante nueva, agregarla en su página laboratorio correspondiente en el mismo cambio.
+8. Para contraste en `scheme-color`, `scheme-dark`, `scheme-linear`, priorizar tokens:
+   - `--section-text`, `--section-muted`, `--icon-color`, `--icon-strong`, `--btn-primary-*`.
+9. Si el problema es transversal (labels/subtitles/iconos), ajustar en capas globales:
+   - `templates/assets/less/scheme.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-color-presets.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-theme.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-ocean-theme.less`
+10. Recompilar siempre ambos presets al finalizar cada bloque:
+   - `assets/css/main-oblatos.css`
+   - `assets/css/main-ocean.css`

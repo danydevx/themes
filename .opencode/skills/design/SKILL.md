@@ -15,6 +15,10 @@ Eres un desarrollador que construye templates PHP modulares para venues de event
 
 Este skill contiene instrucciones **concretas de implementación**, no reglas generales.
 
+**Ámbito de este skill (importante):**
+- Estas reglas aplican al proyecto actual en `themes`.
+- Guardar y mantener estas reglas en `themes/.opencode/skills/` (no en skills globales del sistema).
+
 ---
 
 ## Stack
@@ -94,6 +98,7 @@ Toda sección debe funcionar con estos esquemas (definidos globalmente en `layou
 | `scheme-soft` | Fondo crema/suave, texto oscuro |
 | `scheme-dark` | Fondo oscuro, texto claro |
 | `scheme-color` | Fondo con color primario, texto claro |
+| `scheme-linear` | Fondo degradado lineal de la gama del preset |
 | `scheme-neutral` | Sin cambios (hereda del body) |
 
 ---
@@ -192,6 +197,65 @@ El `main.less` del template importa solo lo usado:
 @import "../../../assets/less/sections/hero/Hero8.less";
 ```
 
+## Reglas para crear nuevas secciones (obligatorio)
+
+Cuando se cree una variante nueva (`{type}/{Variant}`), seguir este checklist:
+
+1. Crear PHP de sección en:
+   - `templates/sections/{type}/{Variant}.php`
+2. Crear LESS de sección en:
+   - `templates/assets/less/sections/{type}/{Variant}.less`
+3. Usar contrato estándar:
+   - `section_defaults($data)`
+   - wrapper con `tb-section` + `scheme`
+   - clases con prefijo `tb-`
+4. Evitar estilos inline no triviales en PHP (mover a LESS).
+5. Usar scope por variante para evitar colisiones:
+   - ejemplo `.tb-faq--5__title`, `.tb-cta--7__step`
+6. Importar el LESS nuevo en los entrypoints del template activo:
+   - `main-oblatos.less`
+   - `main-ocean.less`
+7. Agregar la variante nueva a su página laboratorio correspondiente en el mismo cambio:
+   - hero → `heroes.php`
+   - availability → `availability.php`
+   - cta → `cta.php`
+   - faq → `faq.php`
+   - (y equivalentes por tipo)
+8. Probar al menos en schemes:
+   - `scheme-light`, `scheme-soft`, `scheme-dark`, `scheme-color`
+   - incluir `scheme-linear` cuando aplique
+9. Recompilar CSS de ambos presets:
+   - `assets/css/main-oblatos.css`
+   - `assets/css/main-ocean.css`
+10. Verificar contraste de:
+   - `tb-section__label`, `tb-section__title`, `tb-section__subtitle`
+   - iconos (`--icon-color`, `--icon-strong`)
+
+## Reglas para corregir secciones existentes (obligatorio)
+
+Cuando se depure una variante ya existente, aplicar este flujo:
+
+1. Trabajar una variante por vez (no mezclar múltiples variantes en el mismo bloque).
+2. Revisar primero su PHP y su LESS correspondiente.
+3. Corregir marcado roto o atributos mal colocados (ej. `anim_attrs` dentro de `class`).
+4. Estandarizar datos a `$d = section_defaults($data)` y usar `$d` en toda la sección.
+5. Eliminar estilos inline no triviales y moverlos a LESS.
+6. Mantener scope por variante (`.tb-{type}--{n}__*`) para evitar colisiones.
+7. Reforzar contraste por scheme (`dark`, `color`, `linear`) desde tokens antes de hardcodear.
+8. Si se detecta problema transversal (label/subtitle/iconos), ajustar en capas globales:
+   - `scheme.less` (base)
+   - `oblatos-color-presets.less` (tokens por preset/scheme)
+   - `oblatos-theme.less` / `oblatos-ocean-theme.less` (overrides de template)
+9. Agregar/actualizar la variante en su página laboratorio para validación visual inmediata.
+10. Recompilar ambos presets y validar:
+   - `assets/css/main-oblatos.css`
+   - `assets/css/main-ocean.css`
+11. Reportar al cierre:
+   - variante corregida
+   - archivos tocados (PHP/LESS)
+   - contraste pendiente por scheme
+   - siguiente variante a depurar
+
 ### Flujo de depuración por laboratorios (obligatorio)
 
 Cuando se estén corrigiendo variantes existentes (no creando template nuevo), usar páginas laboratorio dentro del template base activo (ej. `templates/terraza-oblatos/`):
@@ -201,6 +265,10 @@ Cuando se estén corrigiendo variantes existentes (no creando template nuevo), u
 - `heroes.php` para variantes Hero
 - `availability.php` para variantes Availability
 - `cta.php` para variantes CTA
+- `faq.php` para variantes FAQ
+- `gallery.php` para variantes Gallery
+- `services.php` para variantes Services
+- `packages.php` para variantes Packages
 
 Reglas del flujo:
 
@@ -212,6 +280,42 @@ Reglas del flujo:
 6. Recompilar CSS del preset después de cada bloque:
    - `assets/css/main-oblatos.css`
    - `assets/css/main-ocean.css`
+7. Si se crea una variante nueva, agregarla en su página laboratorio correspondiente en el mismo cambio (ej. CTA nueva → `cta.php`).
+
+### Lecciones aplicadas en esta base (obligatorio)
+
+Al depurar secciones existentes en `terraza-oblatos`, respetar estos puntos:
+
+1. Corregir siempre atributos mal formados en el wrapper:
+   - `class="... <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>`
+   - Nunca inyectar `anim_attrs($d)` dentro del string de `class`.
+2. Mover estilos inline no triviales a LESS por variante (`tb-{type}--{n}__*`).
+3. Estandarizar acceso de datos a `$d` (`section_defaults`) en toda la sección.
+4. Evitar colisiones de variante:
+   - no usar scopes genéricos (`.tb-hero`, `.tb-gallery`) cuando se depura una variante;
+   - usar scope explícito (`.tb-hero--7`, `.tb-gallery--5`, `.tb-services--2`).
+5. Para schemes intensos (`color`, `dark`, `linear`), priorizar tokens:
+   - `--section-text`, `--section-muted`, `--icon-color`, `--icon-strong`, `--btn-primary-*`.
+6. Si el problema es transversal (labels/subtitles/iconos), ajustar en capas globales:
+   - `templates/assets/less/scheme.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-color-presets.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-theme.less`
+   - `templates/terraza-oblatos/assets/less/oblatos-ocean-theme.less`
+
+### Regla de `scheme-linear`
+
+- `scheme-linear` debe estar definido para ambos presets (`oblatos` y `ocean`) en color-presets.
+- Debe usar dos colores de la misma gama del preset en `linear-gradient(...)`.
+- Recordatorio técnico: el fondo base de sección debe usar `background`, no `background-color`, para que el degradado se renderice.
+
+### Regla de contraste para iconos (dark/color/linear)
+
+En este proyecto, para `scheme-dark`, `scheme-color` y `scheme-linear`:
+
+- Definir explícitamente `--icon-color` y `--icon-strong` en presets del template.
+- Priorizar `--icon-strong` en componentes de icono importante (badges, pasos, bullets, icon buttons).
+- Evitar valores de icono con baja luminancia sobre fondos oscuros o degradados.
+- Si una sección usa iconos y pierde contraste, ajustar primero tokens del scheme antes de hardcodear color local.
 
 ---
 

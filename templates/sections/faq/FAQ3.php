@@ -1,6 +1,6 @@
 <?php /* === FAQ EXPANDABLE CARDS === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'faq') ?>" class="tb-section tb-faq tb-faq--3 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'faq') ?>" class="tb-section tb-faq tb-faq--3 <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>>
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="row g-4">
-      <?php foreach ($data['items'] ?? [] as $item): ?>
+      <?php foreach ($d['items'] ?? [] as $item): ?>
         <div class="col-md-6">
           <div class="accordion-item border-0 mb-2">
             <h3 class="accordion-header">
@@ -36,12 +36,12 @@
       <?php endforeach; ?>
     </div>
 
-    <?php if (!empty($data['cta_text'])): ?>
+    <?php if (!empty($d['cta_text'])): ?>
       <div class="text-center mt-5">
-        <p class="tb-faq3__cta mb-3"><?= esc($data['cta_text']) ?></p>
-        <?php if (!empty($data['cta_link'])): ?>
-          <a class="tb-btn tb-btn--whatsapp tb-btn--lg" href="<?= esc($data['cta_link']) ?>" target="_blank" rel="noopener">
-            <i class="bi bi-whatsapp"></i> <?= esc($data['cta_label'] ?? 'Consultar') ?>
+        <p class="tb-faq3__cta mb-3"><?= esc($d['cta_text']) ?></p>
+        <?php if (!empty($d['cta_link'])): ?>
+          <a class="tb-btn tb-btn--whatsapp tb-btn--lg" href="<?= esc($d['cta_link']) ?>" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> <?= esc($d['cta_label'] ?? 'Consultar') ?>
           </a>
         <?php endif; ?>
       </div>

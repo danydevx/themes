@@ -3,7 +3,24 @@
    Horizontal scroll con snap
    ═══════════════════════════════════════ */
 
-.tb-gallery {
+.tb-gallery--4 {
+  &__track {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-left: max(1rem, calc((100vw - 1140px) / 2));
+  }
+
+  &__cell {
+    scroll-snap-align: start;
+    width: clamp(280px, 40vw, 400px);
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
   &__slide {
     display: block;
     overflow: hidden;
@@ -11,13 +28,7 @@
     cursor: pointer;
     transition: transform var(--tb-transition);
 
-    img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-      transition: transform var(--tb-transition);
-    }
+    img { display: block; transition: transform var(--tb-transition); }
 
     &:hover img { transform: scale(1.04); }
   }

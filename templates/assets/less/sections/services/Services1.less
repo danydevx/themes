@@ -3,7 +3,7 @@
    Grid de 4 columnas con iconos
    ═══════════════════════════════════════ */
 
-.tb-service {
+.tb-services--1 .tb-service {
   text-align: center;
   padding: 1.25rem 0.75rem;
 
@@ -27,5 +27,26 @@
     color: var(--section-muted);
     line-height: 1.55;
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tb-services--1 .tb-service {
+    padding: 1rem 0.55rem;
+
+    i {
+      font-size: 1.95rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .tb-service__title {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .tb-service__desc {
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
   }
 }

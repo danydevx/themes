@@ -3,6 +3,84 @@
    Tabs con pricing y detalles de paquetes
    ═══════════════════════════════════════ */
 
+.tb-packages--1 {
+  &__tabs {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  &__summary {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+  }
+
+  &__capacity,
+  &__currency {
+    color: var(--section-muted);
+  }
+
+  &__extras-title,
+  &__check {
+    color: var(--icon-strong, var(--tb-primary));
+  }
+
+  &__detail {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+  }
+
+  &.scheme-color,
+  &.scheme-dark,
+  &.scheme-linear {
+    .tb-packages--1__summary,
+    .tb-packages--1__detail {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .tb-packages--1__capacity,
+    .tb-packages--1__currency,
+    .tb-packages__section-item {
+      color: var(--section-text);
+      opacity: 0.92;
+    }
+
+    .tb-packages__tab {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.24);
+      color: var(--section-text);
+    }
+
+    .tb-packages__tab:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: #ffffff;
+    }
+
+    .tb-packages__tab.active {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #1f2b2a;
+    }
+
+    .tb-packages__price {
+      color: #ffffff;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.22);
+    }
+
+    .tb-packages__extras {
+      background: rgba(255, 255, 255, 0.1);
+      border-left-color: rgba(255, 255, 255, 0.84);
+    }
+
+    .tb-packages--1__extras-title,
+    .tb-packages--1__check,
+    .tb-packages__section-title i {
+      color: #ffffff;
+    }
+  }
+}
+
 .tb-packages {
   &__tab {
     font-weight: 600;

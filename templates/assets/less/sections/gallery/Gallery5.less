@@ -3,7 +3,7 @@
    Swiper con thumbnails + GLightbox
    ═══════════════════════════════════════ */
 
-.tb-gallery {
+.tb-gallery--5 {
   &__slide {
     overflow: hidden;
     cursor: pointer;
@@ -14,5 +14,29 @@
       transition: transform 0.5s ease;
     }
     &:hover img { transform: scale(1.03); }
+  }
+
+  &__main-image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__nav {
+    color: var(--icon-strong, var(--tb-primary));
+    --swiper-navigation-size: 24px;
+  }
+
+  &__thumb-slide {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &__thumb-frame {
+    transition: border-color 0.2s;
+  }
+
+  &__thumb-image {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
   }
 }

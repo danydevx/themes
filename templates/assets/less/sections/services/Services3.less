@@ -62,6 +62,35 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .tb-services--3 {
+    .tb-services--3__grid {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .tb-services--3__item {
+      padding: 1.4rem 1rem;
+    }
+
+    .tb-services--3__number {
+      width: 3.3rem;
+      height: 3.3rem;
+      font-size: 1.15rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .tb-services--3__title {
+      font-size: 0.98rem;
+    }
+
+    .tb-services--3__desc {
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+  }
+}
+
 .scheme-dark,
 .scheme-color {
   .tb-services--3__item {
@@ -71,6 +100,27 @@
 
   .tb-services--3__title {
     color: var(--heading-color);
+  }
+
+  .tb-services--3__desc {
+    color: var(--section-text);
+    opacity: 0.92;
+  }
+}
+
+.scheme-linear {
+  .tb-services--3__item {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.26);
+  }
+
+  .tb-services--3__title,
+  .tb-services--3__desc {
+    color: var(--section-text);
+  }
+
+  .tb-services--3__desc {
+    opacity: 0.92;
   }
 }
 

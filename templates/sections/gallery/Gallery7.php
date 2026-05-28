@@ -1,6 +1,6 @@
 <?php /* === GALLERY7 STAGGERED MASONRY === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section tb-gallery--7 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'galeria') ?>" class="tb-section tb-gallery--7 <?= esc($d['scheme']) ?>"<?= anim_attrs($d) ?>>
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?><span class="tb-section__label"><?= esc($d['label']) ?></span><?php endif; ?>
@@ -13,11 +13,12 @@
   <div class="container-fluid px-4">
     <div class="tb-gallery--7__grid">
 
-      <?php foreach (($data['images'] ?? []) as $i => $img): ?>
-        <div class="tb-gallery--7__item <?= $i % 5 === 0 ? 'tb-gallery--7__item--tall' : '' ?> rounded-4 overflow-hidden position-relative" style="aspect-ratio:<?= $i % 5 === 0 ? '2/3' : '4/3' ?>">
-          <img src="<?= esc($img['thumb'] ?? $img['full'] ?? '') ?>" alt="<?= esc($img['alt'] ?? 'Galería') ?>" class="w-100 h-100" style="object-fit:cover; transition:transform 0.4s ease">
+      <?php foreach (($d['images'] ?? []) as $i => $img): ?>
+        <?php $isTall = ($i % 5 === 0); ?>
+        <div class="tb-gallery--7__item <?= $isTall ? 'tb-gallery--7__item--tall' : 'tb-gallery--7__item--wide' ?> rounded-4 overflow-hidden position-relative">
+          <img src="<?= esc($img['thumb'] ?? $img['full'] ?? '') ?>" alt="<?= esc($img['alt'] ?? 'Galería') ?>" class="tb-gallery--7__image w-100 h-100">
           <div class="tb-gallery--7__overlay position-absolute inset-0 d-flex align-items-end p-3">
-            <span class="small text-white fw-500"><?= esc($img['alt'] ?? '') ?></span>
+            <span class="small text-white fw-semibold"><?= esc($img['alt'] ?? '') ?></span>
           </div>
         </div>
       <?php endforeach; ?>
@@ -25,10 +26,10 @@
     </div>
   </div>
 
-  <?php if (!empty($data['cta_text']) && !empty($data['cta_link'])): ?>
+  <?php if (!empty($d['cta_text']) && !empty($d['cta_link'])): ?>
     <div class="container text-center mt-5">
-      <a href="<?= esc($data['cta_link']) ?>" class="tb-btn tb-btn--outline">
-        <?= esc($data['cta_text']) ?>
+      <a href="<?= esc($d['cta_link']) ?>" class="tb-btn tb-btn--outline">
+        <?= esc($d['cta_text']) ?>
       </a>
     </div>
   <?php endif; ?>

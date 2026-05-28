@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════
+   Section LESS — CTA7
+   Timeline bar CTA with two actions
+   ═══════════════════════════════════════ */
+
+.tb-cta--7 {
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.2rem;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: var(--tb-radius-lg);
+    border: 1px solid var(--section-border);
+    background: var(--card-bg, var(--section-surface));
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-color, var(--tb-primary));
+    margin-bottom: 0.4rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--tb-heading-font);
+    font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+    color: var(--heading-color, var(--section-text));
+  }
+
+  &__text {
+    margin: 0.4rem 0 0;
+    color: var(--section-muted);
+  }
+
+  &__steps {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  &__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--section-border);
+    background: var(--section-bg);
+    border-radius: 999px;
+    padding: 0.28rem 0.6rem;
+  }
+
+  &__step-num {
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary-bg, var(--button-bg));
+    color: var(--btn-primary-text, var(--button-text));
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  &__step-label {
+    font-size: 0.82rem;
+    color: var(--card-text, var(--section-text));
+    font-weight: 600;
+  }
+
+  &__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &.scheme-dark,
+  &.scheme-color {
+    .tb-cta--7__wrap {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .tb-cta--7__title,
+    .tb-cta--7__text,
+    .tb-cta--7__step-label {
+      color: var(--section-text);
+    }
+
+    .tb-cta--7__text {
+      opacity: 0.9;
+    }
+
+    .tb-cta--7__step {
+      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tb-cta--7 {
+    &__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    &__actions {
+      justify-content: flex-start;
+    }
+  }
+}

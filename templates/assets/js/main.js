@@ -34,4 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     GLightbox({ selector: '.glightbox-magnolia' });
   }
+
+  /* Packages2 uses Bootstrap tabs natively */
 });
