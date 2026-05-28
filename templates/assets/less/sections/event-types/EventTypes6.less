@@ -1,21 +1,86 @@
 /* ═══════════════════════════════════════
    Section LESS — EventTypes6
-   Horizontal scroll cards
+   Horizontal scroll cards (refactorizado)
    ═══════════════════════════════════════ */
 
 .tb-event-types--6 {
-  &__scroll-wrapper {
+  &__scroll {
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+
     &::-webkit-scrollbar { height: 6px; }
     &::-webkit-scrollbar-track { background: var(--section-border); border-radius: 3px; }
     &::-webkit-scrollbar-thumb { background: var(--tb-primary); border-radius: 3px; }
   }
 
   &__card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
     transition: all var(--tb-transition);
     &:hover {
-      border-color: var(--tb-primary) !important;
+      border-color: var(--tb-primary);
       transform: translateY(-4px);
       box-shadow: var(--tb-shadow-md);
     }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(var(--tb-primary-rgb), 0.12);
+    color: var(--tb-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    i { font-size: 1.5rem; }
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--heading-color, var(--tb-text));
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    color: var(--section-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  &__price {
+    margin-top: auto;
+    .badge {
+      background: var(--tb-primary);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+    }
+  }
+
+  &__note {
+    color: var(--section-muted);
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
   }
 }

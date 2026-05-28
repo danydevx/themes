@@ -1,9 +1,7 @@
 /* ═══════════════════════════════════════
-   Terraza Oblatos — Main LESS (compat)
-   Preset por defecto: Oblatos
-   Use `main-oblatos.less` o `main-ocean.less`.
-   ═══════════════════════════════════════ */
-/* 1. Base global */
+    Terraza Oblatos — Main LESS (producción)
+    Solo secciones usadas por index.php
+    ═══════════════════════════════════════ */
 /* ═══════════════════════════════════════
    Scheme base — variables y esquemas globales
    Compartido por todos los templates.
@@ -452,7 +450,6 @@ img {
     font-size: 0.9rem;
   }
 }
-/* 2. Variables Oblatos */
 /* ═══════════════════════════════════════
    Color presets — Terraza Oblatos
    Un solo archivo para variantes de color
@@ -593,7 +590,6 @@ body.theme-oblatos-ocean .scheme-color {
   --icon-color: #edf6f9;
   color: #edf6f9;
 }
-/* 3. Tema Oblatos */
 /* ═══════════════════════════════════════
    Theme: Terraza Oblatos — Festivo Familiar
    Verde natural + beige + arena
@@ -925,7 +921,6 @@ body.theme-oblatos .tb-about--7.scheme-color .tb-about__milestone-title {
     font-size: 2rem !important;
   }
 }
-/* 4. Cards compartidas */
 /* ═══════════════════════════════════════
    Section LESS — Cards (compartido)
    Usado por: About, Services, EventTypes, Amenities, Pricing, Rooms
@@ -962,7 +957,6 @@ body.theme-oblatos .tb-about--7.scheme-color .tb-about__milestone-title {
   color: var(--tb-primary);
   margin-bottom: 1rem;
 }
-/* 5. Secciones nuevas Oblatos */
 /* ═══════════════════════════════════════
    Section LESS — Header3
    Logo left, nav center, CTA right
@@ -1050,17 +1044,14 @@ body.theme-oblatos .tb-about--7.scheme-color .tb-about__milestone-title {
   align-items: center;
   z-index: 2;
 }
-.tb-hero--10__content--on-bg {
-  color: #fff;
-}
 .tb-hero--10__content--on-bg .tb-hero__title,
 .tb-hero--10__content--on-bg .tb-hero--10__text,
 .tb-hero--10__content--on-bg .tb-hero--10__feature .small,
 .tb-hero--10__content--on-bg .tb-hero--10__overline {
-  color: #fff;
+  color: var(--heading-color, #fff);
 }
 .tb-hero--10__content--on-bg .tb-hero--10__text {
-  opacity: 0.92;
+  opacity: 0.9;
 }
 .tb-hero--10__media {
   min-height: 520px;
@@ -1078,12 +1069,13 @@ body.theme-oblatos .tb-about--7.scheme-color .tb-about__milestone-title {
   z-index: 1;
 }
 .tb-hero--10__badge {
+  position: absolute;
   top: 2rem;
   left: 2rem;
 }
 .tb-hero--10__badge-text {
-  background: var(--tb-primary);
-  color: #fff;
+  background: var(--btn-bg, var(--tb-primary));
+  color: var(--btn-text, #fff);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.82rem;
@@ -1113,7 +1105,7 @@ body.theme-oblatos .tb-about--7.scheme-color .tb-about__milestone-title {
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
 }
-.tb-hero--10__feature .small {
+.tb-hero--10__feature-label {
   color: var(--card-text, var(--section-text));
 }
 .tb-hero--10__feature-icon {

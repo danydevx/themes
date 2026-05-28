@@ -9,30 +9,27 @@
     </div>
   </div>
 
-  <!-- Horizontal scroll cards -->
-  <div class="tb-event-types--6__scroll-wrapper overflow-hidden">
-    <div class="tb-event-types--6__track d-flex gap-4 px-4 pb-4" style="overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding-bottom:1rem">
-
+  <div class="tb-event-types--6__scroll">
+    <div class="tb-event-types--6__track">
       <?php foreach ($data['items'] ?? [] as $item): ?>
-        <div class="tb-event-types--6__card flex-shrink-0 rounded-4 p-4" style="width:300px; scroll-snap-align:start; background:var(--section-surface); border:1px solid var(--section-border)">
-          <div class="text-center mb-3">
-            <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:64px; height:64px; background:rgba(var(--tb-primary-rgb),0.12); color:var(--tb-primary)">
-              <i class="bi <?= esc($item['icon'] ?? 'bi-star') ?> fs-3"></i>
+        <div class="tb-event-types--6__card">
+          <div class="text-center">
+            <div class="tb-event-types--6__icon">
+              <i class="bi <?= esc($item['icon'] ?? 'bi-star') ?>"></i>
             </div>
-            <h3 class="mb-2" style="font-size:1.1rem; font-weight:700"><?= esc($item['title'] ?? '') ?></h3>
-            <p class="small mb-3" style="color:var(--section-muted); line-height:1.5"><?= esc($item['text'] ?? '') ?></p>
+            <h3 class="tb-event-types--6__title"><?= esc($item['title'] ?? '') ?></h3>
+            <p class="tb-event-types--6__text"><?= esc($item['text'] ?? '') ?></p>
             <?php if (!empty($item['price'])): ?>
-              <div class="mt-auto">
-                <span class="badge" style="background:var(--tb-primary); color:#fff; font-size:0.8rem; padding:0.4rem 0.8rem"><?= esc($item['price']) ?></span>
+              <div class="tb-event-types--6__price">
+                <span class="badge"><?= esc($item['price']) ?></span>
                 <?php if (!empty($item['price_note'])): ?>
-                  <span class="small ms-1" style="color:var(--section-muted)"><?= esc($item['price_note']) ?></span>
+                  <span class="tb-event-types--6__note"><?= esc($item['price_note']) ?></span>
                 <?php endif; ?>
               </div>
             <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>
-
     </div>
   </div>
 

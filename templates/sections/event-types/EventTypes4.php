@@ -1,6 +1,6 @@
-<?php /* === EVENT TYPES EDITORIAL LIST === */ ?>
+<?php /* === EVENTTYPES4 EDITORIAL LIST === */ ?>
 <?php $d = section_defaults($data); ?>
-<section id="<?= esc($d['id'] ?: 'eventos') ?>" class="tb-section <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
+<section id="<?= esc($d['id'] ?: 'eventos') ?>" class="tb-section tb-event-types--4 <?= esc($d['scheme']) ?> <?= anim_attrs($d) ?>">
   <div class="container">
     <div class="tb-section__header">
       <?php if ($d['label']): ?>
@@ -17,13 +17,15 @@
     <div class="row g-0">
       <?php foreach ($data['items'] ?? [] as $idx => $item): ?>
         <div class="col-md-6">
-          <div class="d-flex align-items-start gap-4 py-4 px-3" style="border-bottom:1px solid var(--section-border)">
-            <span class="flex-shrink-0 fw-bold" style="font-family:var(--tb-heading-font); font-size:2.5rem; color:var(--tb-primary); line-height:1; opacity:.7">
+          <div class="tb-event-types--4__item d-flex align-items-start gap-4 py-4 px-3">
+            <span class="tb-event-types--4__index flex-shrink-0 fw-bold">
               <?= esc(str_pad((string)($idx + 1), 2, '0', STR_PAD_LEFT)) ?>
             </span>
             <div>
-              <h3 class="fw-bold mb-2 fs-5" style="font-family:var(--tb-heading-font)"><i class="bi <?= esc($item['icon'] ?? 'bi-star') ?> me-2" style="color:var(--tb-primary); font-size:1.1rem"></i><?= esc($item['title'] ?? '') ?></h3>
-              <p class="mb-0 small" style="color:var(--section-muted); line-height:1.7; max-width:360px"><?= esc($item['text'] ?? '') ?></p>
+              <h3 class="tb-event-types--4__title">
+                <i class="bi <?= esc($item['icon'] ?? 'bi-star') ?> me-2"></i><?= esc($item['title'] ?? '') ?>
+              </h3>
+              <p class="tb-event-types--4__text"><?= esc($item['text'] ?? '') ?></p>
             </div>
           </div>
         </div>

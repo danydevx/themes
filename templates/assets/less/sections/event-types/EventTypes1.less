@@ -1,15 +1,61 @@
 /* ═══════════════════════════════════════
    Section LESS — EventTypes1
-   Cards con imagen superior, icono, título y texto
+   Grid cards refactorizado
    ═══════════════════════════════════════ */
 
-.tb-event-types {
-  &__card-img {
+.tb-event-types--1 {
+  &__card {
+    background: var(--section-surface);
+    border: 1px solid var(--section-border);
+    overflow: hidden;
+    height: 100%;
+    transition: all var(--tb-transition);
+    &:hover {
+      border-color: var(--tb-primary);
+      transform: translateY(-3px);
+      box-shadow: var(--tb-shadow-md);
+    }
+  }
+
+  &__img {
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
+    transition: transform 0.4s ease;
+    .tb-event-types--1__card:hover & { transform: scale(1.04); }
   }
-  .tb-card { overflow: hidden; }
-  .tb-card:hover &__card-img { transform: scale(1.04); }
+
+  &__body {
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(var(--tb-primary-rgb), 0.1);
+    color: var(--tb-primary);
+    font-size: 1.25rem;
+    margin: 0 auto 0.75rem;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-family: var(--tb-heading-font);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--heading-color, var(--tb-text));
+    margin-bottom: 0.4rem;
+  }
+
+  &__text {
+    font-size: 0.88rem;
+    color: var(--section-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
 }

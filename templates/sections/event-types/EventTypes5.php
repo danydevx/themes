@@ -12,23 +12,21 @@
     <div class="row g-4">
       <?php foreach ($data['items'] ?? [] as $item): ?>
         <div class="col-md-6 col-lg-4">
-          <div class="tb-event-types--5__card rounded-4 overflow-hidden h-100 position-relative" style="background:var(--section-surface); border:1px solid var(--section-border); min-height:280px">
-            <!-- Icono grande como fondo -->
-            <div class="position-absolute top-0 end-0 mt-3 me-3 opacity-15">
-              <i class="bi <?= esc($item['icon'] ?? 'bi-balloon') ?>" style="font-size:6rem"></i>
+          <div class="tb-event-types--5__card rounded-4 overflow-hidden h-100 position-relative">
+            <div class="tb-event-types--5__bg-icon position-absolute top-0 end-0 mt-3 me-3">
+              <i class="bi <?= esc($item['icon'] ?? 'bi-balloon') ?>"></i>
             </div>
-            <!-- Contenido -->
-            <div class="p-4 position-relative" style="z-index:2">
-              <div class="tb-event-types--5__icon-wrapper rounded-3 d-inline-flex align-items-center justify-content-center mb-3" style="width:56px; height:56px; background:var(--tb-primary); color:#fff">
-                <i class="bi <?= esc($item['icon'] ?? 'bi-balloon') ?> fs-5"></i>
+            <div class="tb-event-types--5__body p-4 position-relative">
+              <div class="tb-event-types--5__icon-wrapper rounded-3 d-inline-flex align-items-center justify-content-center mb-3">
+                <i class="bi <?= esc($item['icon'] ?? 'bi-balloon') ?>"></i>
               </div>
-              <h3 class="fw-bold mb-2" style="font-family:var(--tb-heading-font)"><?= esc($item['title'] ?? '') ?></h3>
-              <p class="mb-0" style="color:var(--section-muted); font-size:0.9rem; line-height:1.6"><?= esc($item['text'] ?? '') ?></p>
+              <h3 class="tb-event-types--5__title"><?= esc($item['title'] ?? '') ?></h3>
+              <p class="tb-event-types--5__text"><?= esc($item['text'] ?? '') ?></p>
               <?php if (!empty($item['price'])): ?>
-                <div class="mt-3 pt-3 border-top" style="border-color:var(--section-border) !important">
-                  <span class="fw-bold" style="color:var(--tb-primary)"><?= esc($item['price']) ?></span>
+                <div class="tb-event-types--5__price">
+                  <span class="fw-bold"><?= esc($item['price']) ?></span>
                   <?php if (!empty($item['price_note'])): ?>
-                    <span class="small ms-1" style="color:var(--section-muted)"><?= esc($item['price_note']) ?></span>
+                    <span class="small"><?= esc($item['price_note']) ?></span>
                   <?php endif; ?>
                 </div>
               <?php endif; ?>
